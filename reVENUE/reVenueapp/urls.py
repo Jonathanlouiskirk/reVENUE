@@ -1,5 +1,5 @@
 from django.urls import path
-from reVENUEapp.views import HomeView
+from .views import HomeView
 
 urlpatterns = [
     # Home
