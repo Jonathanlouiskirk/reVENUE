@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'reVenueapp.apps.RevenueappConfig',
+    'revenueapp.apps.RevenueappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'reVENUE.urls'
+ROOT_URLCONF = 'revenue.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'reVENUE.wsgi.application'
+WSGI_APPLICATION = 'revenue.wsgi.application'
 
 
 # Database
