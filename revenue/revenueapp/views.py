@@ -10,10 +10,10 @@ class VenueView(View):
     def get(self, request):
         return render(request=request, template_name='venue.html')
 
-class Venue_reviewView(View):
+class VenueReviewView(View):
     def get(self, request):
-        return render(request=request, template_name='venue_review.html')       
+        return render(request=request, template_name='venuereview.html')       
 
-class Individual_VenueView(View):
+class IndividualVenueView(View):
     def get(self, request):
-        return render(request=request, template_name='individual_venue.html')       
+        return render(request=request, template_name='individualvenue.html')       
