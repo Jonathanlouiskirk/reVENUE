@@ -7,6 +7,6 @@ urlpatterns = [
     path('', VenueView.as_view(), name='venue'),
     path('', VenueReviewView.as_view(),
     name='venuereview'),
-    path('', IndividualVenueView.as_view()
+    path('', IndividualVenueView.as_view(),
     name='individualvenue')
 ]
