@@ -17,7 +17,7 @@
     {% load static %}
     <div class="navbar">
         <ul>
-            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="#rateavenue">Rate A Venue</a></li>
             <li><a href="#ratingssearch">Ratings Search</a></li>
@@ -27,9 +27,9 @@
 
     <br>
     <br>
-    
-    <h1>About</h1>
-    <p>We wanted to create an app.</p>
+    <h1 style="color: #f2f2f2; text-align: center;">About </h1>
+    <p style="color: #f2f2f2; border:3px; border-style:solid; border-color:#2a52be; padding: 1em; width: 600px; display: block; margin-left: auto; margin-right: auto">We wanted to create an app that allows the user to rate venues in the Austin area based on different categories.  We were inspired by music blogs and other websites, as well as by our own interests in music and how the world intereacts with it.  Music venues are once again a cultural hub that bring people together, post-pandemic.  And we were excited to develop this app that will allow the user to share their experiences with others.<br><br>ReVENUE allows the user to rate the seating, sound, scene, bathroom, and overall experience of a particular venue.  There are several Austin city-area venues to select for a rating.  Currently, reVENUE is setup for one user to enter their ratings and review, but we hope that in the future the app can be developed further to allow for multiple users to interact with it.  reVENUE is scalabled to be used for other cities and multiple venues!</p>
+    </div>
     
 </body>
 </html>
