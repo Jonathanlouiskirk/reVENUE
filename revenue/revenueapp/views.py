@@ -10,6 +10,7 @@ class VenueView(View):
     def get(self, request):
         return render(request=request, template_name='venue.html')
 
+
 class VenueReviewView(View):
     def get(self, request):
         return render(request=request, template_name='venue_review.html')       
@@ -17,3 +18,4 @@ class VenueReviewView(View):
 class IndividualVenueView(View):
     def get(self, request):
         return render(request=request, template_name='individual_venue.html')       
+
