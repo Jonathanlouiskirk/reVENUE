@@ -50,3 +50,10 @@ body {
     background-color: #2a52be;
     color: white;
   }
+
+.about {
+    border:3px; 
+    border-style:solid; 
+    border-color:#FF0000; 
+    padding: 1em;
+}
