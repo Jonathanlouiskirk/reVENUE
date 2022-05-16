@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     {% load static %}
     <link rel='stylesheet' href="{% static 'styles.css' %}">
     <meta charset="UTF-8">
@@ -19,16 +20,47 @@
         <ul>
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#rateavenue">Rate A Venue</a></li>
-            <li><a href="#ratingssearch">Ratings Search</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="{% url 'venue_review' %}">Rate A Venue</a></li>
+            <li><a href="{% url 'individual_venue' %}">Ratings Search</a></li>
+            <li><a href="{% url 'create_venue' %}">FAQ</a></li>
         </ul>
     </div>
-
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVKvoAVc_2kA0N9aTMwQB8_v8llGy08KowVQ&usqp=CAU" alt="10 best venues in houston.com" width="100%" class="center">
+<!--    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "80%" class = "center">-->
     <br>
     <br>
+    <!DOCTYPE html>
+    <html>
+    <body>
     
-    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "80%" class = "center">
+    <!-- Think about changing the title -->
+    <h2 align="center"><i>Create New Venue</i></h2>
     
+    <!-- action should be the file name/data base that you want the responses to go to (<form action="/action_page.php">)-->
+    
+    <!-- for should be the way you want your data to be labeled (<label for="fname">) -->
+    
+    <form align="center" action="/action_page.php">
+      <label for="vname">Venue Name</label><br>
+      <input type="text" id="vname" name="vname" value=""><br>
+      
+      <label for="address">Address</label><br>
+      <input type="text" id="address"name="address" value=""><br>
+      
+       <label for="website">Website</label><br>
+      <input type="text" id="vname" name="vname" value=""><br>
+      
+       <label for="image">Image</label><br>
+      <input type="text" id="image" name="image" value=""><br>
+    
+    <br>
+      <input style="width:50%" autofocus type="submit" value="CREATE VENUE">
+</form> 
+    
+   
+    
+    
+    
+        
 </body>
 </html>

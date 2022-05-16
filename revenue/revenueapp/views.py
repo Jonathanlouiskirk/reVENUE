@@ -19,3 +19,6 @@ class IndividualVenueView(View):
     def get(self, request):
         return render(request=request, template_name='individual_venue.html')       
 
+class CreateVenueView(View):
+    def get(self, request):
+        return render(request=request, template_name='create_venue.html')       

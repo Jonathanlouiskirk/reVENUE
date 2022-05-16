@@ -18,10 +18,10 @@
     <div class="navbar">
         <ul>
             <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="rateavenu">Rate A Venue</a></li>
-            <li><a href="#ratings{% url '' %}search">Ratings Search</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="{% url 'venue_review' %}">Rate A Venue</a></li>
+            <li><a  href="{% url 'individual_venue' %}">Ratings Search</a></li>
+            <li><a href="{% url 'create_venue' %}">FAQ</a></li>
         </ul>
     </div>
 
