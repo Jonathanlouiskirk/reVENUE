@@ -6,9 +6,6 @@ class HomeView(View):
     def get(self, request):
         return render(request=request, template_name='home.html')
         
-class VenueView(View):
-    def get(self, request):
-        return render(request=request, template_name='venue.html')
 
 
 class VenueReviewView(View):
