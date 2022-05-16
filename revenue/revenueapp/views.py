@@ -4,7 +4,7 @@ from django.views import View
 # Django built-in edit views
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from revenueapp.models import Venue
+from revenueapp.models import Venue, Review
 
 
 class HomeView(View):
@@ -18,5 +18,11 @@ class AboutView(View):
 # CreateView creates a form and passes to the template 'venue_form.html'
 class VenueCreateView(CreateView):
     model = Venue
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+    
+# Testing foreignkey relationships in CreateView
+class ReviewCreateView(CreateView):
+    model = Review
     fields = '__all__'
     success_url = reverse_lazy('home')

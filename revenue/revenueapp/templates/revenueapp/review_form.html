@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reVENUE Create Venue</title>
+</head>
+
+<div class="header">
+    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
+</div>
+
+<body style="background-color:rgb(51, 51, 51);">
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a class="active" href="#venuecreate">Review Venue</a></li>
+        </ul>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {% comment %} 
+        This form variable is created automatically by CreateView generic view.
+        form.as_p renders the form vertically. 
+        {% endcomment %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>
