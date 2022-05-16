@@ -16,9 +16,10 @@
 <body style="background-color:rgb(51, 51, 51);">
     <div class="navbar">
         <ul>
-            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
-            <li><a class="active" href="#venuecreate">Create a Venue</a></li>
+            <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+            <li><a href="{% url 'review_create' %}">Review</a></li>
         </ul>
     </div>
     <form method="post">
