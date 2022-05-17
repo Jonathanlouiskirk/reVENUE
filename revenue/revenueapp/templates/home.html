@@ -22,11 +22,18 @@
             <li><a href="{% url 'review_create' %}">Review</a></li>
         </ul>
     </div>
-
     <br>
     <br>
-    
-    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "80%" class = "center">
-    
+    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "70%" class = "center">
 </body>
+
+<p style="color: #f2f2f2; border:3px; border-style:solid; border-color:#2a52be; padding: 1em; width: 700px; display: block; text-align: center; margin-left: auto; margin-right: auto">Welcome to reVENUE!<br><br>Please select a venue from the list below to see a review or create your own.  Want to review a venue not on this list?  Simply click on Create a Venue on the link above.  Rock on!<br></p>
+
+<ul>
+     {% for venue in venues %}
+        <li style="text-decoration: none; color: #f2f2f2"><a href="{% url 'review_create' %}">{{venue.name }}</a></li>
+     {% endfor %}
+</ul>
+
+
 </html>

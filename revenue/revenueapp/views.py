@@ -1,4 +1,5 @@
 """Views module for revenueapp."""
+from unicodedata import name
 from django.shortcuts import render
 from django.views import View
 # Django built-in edit views
@@ -9,7 +10,14 @@ from revenueapp.models import Venue, Review
 
 class HomeView(View):
     def get(self, request):
-        return render(request=request, template_name='home.html')
+        venues = Venue.objects.all()
+        context ={
+            'venues' : venues
+        }
+        
+        return render(
+            request=request, template_name='home.html', context=context
+            )
 
 class AboutView(View):
     def get(self, request):
