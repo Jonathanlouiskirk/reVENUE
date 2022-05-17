@@ -19,6 +19,7 @@ class Venue(models.Model):
     name = models.CharField(
             "name of the venue",
             max_length=50,
+            unique=True,
             validators=[MinLengthValidator(2, "Name must be greater than 1 character")]
     )
     address = models.CharField("street address", max_length=120)
