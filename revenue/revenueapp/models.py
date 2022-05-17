@@ -29,7 +29,7 @@ class Venue(models.Model):
     # phone = models.CharField(max_length=10)
     website = models.URLField("external venue website", max_length=200)
     image = models.URLField("link to an image of venue", max_length=200)
-    genres = models.ManyToManyField(Genre)
+    genres = models.ManyToManyField(Genre, help_text="HINT: Select multiple genres with ctrl/cmd.")
 
     # override the __str__ method to return the name of the venue
     def __str__(self):
@@ -39,7 +39,7 @@ class Venue(models.Model):
 class Review(models.Model):
     """Model for a review of a venue."""
     # Venue that is being reviewed
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, null=False)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, unique=True, null=False)
     # overall_rating is an integer from 1 to 5 with a default of 1
     class StarRating(models.IntegerChoices):
         """Star rating for a venue."""
