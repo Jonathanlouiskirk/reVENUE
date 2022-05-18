@@ -20,7 +20,7 @@ body {
 .navbar a {
     text-decoration: none;
     color: #f2f2f2;
-    width: 130px;
+    width: 170px;
     display: block;
     padding: 10px 23px;
     font-size: 18px;
@@ -43,12 +43,6 @@ body {
 .navbar a:hover {
     background-color: #ddd;
     color: black;
-  }
-
-  /* This sets the color to the active link */
-.navbar a.active {
-    background-color: #2a52be;
-    color: white;
   }
 
 .about {
