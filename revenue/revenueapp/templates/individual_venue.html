@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+  
   <style>* {
     box-sizing: border-box;
   }
@@ -64,7 +67,46 @@
   .bar-3 {width: 10%; height: 18px; background-color: #f73f67;}
   .bar-2 {width: 4%; height: 18px; background-color: #94edf5;}
   .bar-1 {width: 15%; height: 18px; background-color: #6b0e07;}
-  
+  * {box-sizing: border-box}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 20%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
   /* Responsive layout - make the columns stack on top of each other instead of next to each other */
   @media (max-width: 400px) {
     .side, .middle {
@@ -85,11 +127,11 @@
 </head>
 
 <div class="header">
-    {% load static %} <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
+    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
   </div>
 
 <body style="background-color:rgb(51, 51, 51);">
-    {% load static %}
+  
     <div class="navbar">
         <ul>
             <li><a class="active" href="#home">Home</a></li>
@@ -118,12 +160,21 @@
     <p>View</p>-->
 
 
-<!-- Add icon library -->
 
+      
+      <p>Please update or delete your venue</p>
+
+      <div class="clearfix">
+        <button type="button" class="updatebtn">Update</button>
+        <button type="button" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
 
 </body>
 <html>
-<span class="heading">User Rating</span>
+<span class="heading">Venue Rating</span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>

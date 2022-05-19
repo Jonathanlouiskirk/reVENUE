@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-   
+  <!-- <form> method="post"
+      {% csrf_token %}
+      {% comment %}       #need to find were to put!
+      This form variable is created automatically by CreateView generic view.
+      form.as_p renders the form vertically. 
+      {% endcomment %}
+      {{ form.as_p }}
+      <input> type="submit" value="Save">
+  </form>-->
 <head>
    <style>@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -179,7 +187,7 @@
 </head>
 
 <div class="header">
-    {% load static %} <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>  
+ <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>  
   </div>
 
 <body style="background-color:rgb(51, 51, 51);">
@@ -213,7 +221,9 @@
 <main>
 <section>
 <!-- form starts -->
+
 <form name="star_submit" id="star_submit" action="test_form.php" method="post">
+   
 <fieldset>
 <legend> Star Rating</legend>
 <table>
@@ -221,6 +231,7 @@
    <td colspan="1">
     
             <br>
+            
    <div class="star_rating">
       <!-- this has 4 stars, you can change to add or subtract stars. -->
          <input type="checkbox" id="star5" name="Star_Rating_of_5_stars" class="star" value="5">
@@ -233,9 +244,13 @@
       <label for="star2" class="star" title="2 stars"></label>
          <input type="checkbox" id="star1" name="Star_Rating_of_5_stars" class="star" value="1">
       <label for="star1" class="star" title="1 stars"></label>
+      
    </div>
   </td>
 </tr>
+
+
+
 </fieldset>
 <tr>
    <td colspan="1">

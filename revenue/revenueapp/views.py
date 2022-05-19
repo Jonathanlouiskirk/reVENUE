@@ -13,7 +13,7 @@ class HomeView(View):
         
 
 
-class VenueReviewView(View):
+class AboutView(View):
     def get(self, request):
         return render(request=request, template_name='about.html')
 
