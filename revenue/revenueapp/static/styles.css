@@ -39,15 +39,51 @@ body {
     display: inline-block;
 }
 
-  /*This changes the color of links on hover */
+  /*This changes the color of links on the navigation bar on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #2a52be;
+    color: #f2f2f2;
   }
 
-.about {
-    border:3px; 
-    border-style:solid; 
-    border-color:#FF0000; 
-    padding: 1em;
+ /*Listbar styles the list of venues on home page */
+.listbar {
+  text-align: center; 
+  text-decoration: none; 
 }
+
+.listbar ul {
+  list-style: none;
+}
+
+.listbar a {
+  color: f2f2f2;
+  font-weight: bold;
+  border-left: 1px solid #2a52be;
+  border-right: 1px solid #2a52be;
+  padding: 9px 9px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.listbar li {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  color: f2f2f2
+}
+
+ /*This styles the color of the hyperlinks on all pages */
+a:link, a:visited {
+  color: #f2f2f2;
+}
+
+a:hover{
+  color:#2a52be
+}
+
+a:active{
+  color:orange
+}
+
+
+  
