@@ -6,6 +6,7 @@ from django.views import View
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from revenueapp.models import Venue, Review
+from revenueapp.forms import ReviewUpdateForm
 
 
 class HomeView(View):
@@ -34,3 +35,13 @@ class ReviewCreateView(CreateView):
     model = Review
     fields = '__all__'
     success_url = reverse_lazy('home')
+
+class ReviewUpdateView(View):
+    def get(self, request, pk):
+        # get the review object where venue id = pk
+        review = Review.objects.get(venue_id=pk)
+        # create a form instance
+        form = ReviewUpdateForm(instance=review)
+        # pass the form to the template
+        context = {'form': form}
+        return render(request, 'review_update_form.html', context)

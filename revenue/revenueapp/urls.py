@@ -1,13 +1,14 @@
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView
+from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView, ReviewUpdateView
 
 urlpatterns = [
     # Home
     path('', HomeView.as_view(), name='home'),
     path('about', AboutView.as_view(), name='about'),
     path('venuecreate', VenueCreateView.as_view(), name='venue_create'),
-    path('reviewcreate', ReviewCreateView.as_view(), name='review_create')
+    path('reviewcreate', ReviewCreateView.as_view(), name='review_create'),
+    path('reviewupdate/<int:pk>', ReviewUpdateView.as_view(), name='review_update')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
