@@ -132,15 +132,14 @@ button:hover {
 
 <body style="background-color:rgb(51, 51, 51);">
   
-    <div class="navbar">
-        <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="{% url 'venue_review' %}">Rate A Venue</a></li>
-            <li><a  href="{% url 'individual_venue' %}">Ratings Search</a></li>
-            <li><a href="{% url 'create_venue' %}">FAQ</a></li>
-        </ul>
-    </div>
+<div class="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+        <li><a href="{% url 'review_create' %}">Review</a></li>
+    </ul>
+</div>
     
     <br>
     <br>
@@ -165,8 +164,10 @@ button:hover {
       <p>Please update or delete your venue</p>
 
       <div class="clearfix">
-        <button type="button" class="updatebtn">Update</button>
-        <button type="button" class="deletebtn">Delete</button>
+        <button <input type="button" onclick="location.href='https://http://127.0.0.1:8000/review_create';" value="Go to Google" />
+          Update
+        </button>
+        <button type="button" onclick="location.href='review_form.html'"class="deletebtn">Delete</button>
       </div>
     </div>
   </form>

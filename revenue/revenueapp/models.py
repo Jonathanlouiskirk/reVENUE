@@ -39,7 +39,7 @@ class Venue(models.Model):
 class Review(models.Model):
     """Model for a review of a venue."""
     # Venue that is being reviewed
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, unique=True, null=False)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, unique=False, null=False)
     # overall_rating is an integer from 1 to 5 with a default of 1
     class StarRating(models.IntegerChoices):
         """Star rating for a venue."""
