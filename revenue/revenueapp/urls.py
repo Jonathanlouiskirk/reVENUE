@@ -10,3 +10,4 @@ urlpatterns = [
     path('reviewcreate', ReviewCreateView.as_view(), name='review_create'),
     path('individual_venue', IndividualVenueView.as_view(), name='individual_venue')
 ]
+urlpatterns += staticfiles_urlpatterns()
