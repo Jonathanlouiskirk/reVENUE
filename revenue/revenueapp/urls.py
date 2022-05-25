@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView, ReviewUpdateView
+from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView, ReviewUpdateView, ReviewDeleteView
 
 urlpatterns = [
     # Home
@@ -8,7 +8,8 @@ urlpatterns = [
     path('about', AboutView.as_view(), name='about'),
     path('venuecreate', VenueCreateView.as_view(), name='venue_create'),
     path('reviewcreate', ReviewCreateView.as_view(), name='review_create'),
-    path('reviewupdate/<int:pk>', ReviewUpdateView.as_view(), name='review_update')
+    path('reviewupdate/<int:pk>', ReviewUpdateView.as_view(), name='review_update'),
+    path('reviewdelete/<int:pk>', ReviewDeleteView.as_view(), name='review_delete')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

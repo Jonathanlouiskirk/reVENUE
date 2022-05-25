@@ -59,3 +59,19 @@ class ReviewUpdateView(View):
         form.save()
         return redirect('home')
 
+class ReviewDeleteView(View):
+    def get(self, request, pk):
+        # This Get method is for testing only, the 'delete' button will be a POST request.
+        # Get the review where venue id = pk
+        review = Review.objects.get(venue_id=pk)
+        # Delete the review
+        review.delete()
+        # redirect to home
+        return redirect('home')
+    def post(self, request, pk):
+        # Get the review where venue id = pk
+        review = Review.objects.get(venue_id=pk)
+        # Delete the review
+        review.delete()
+        # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
+        return redirect('home')
