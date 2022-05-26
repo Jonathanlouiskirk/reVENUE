@@ -1,6 +1,10 @@
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+<<<<<<< HEAD
 from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView
+=======
+from revenueapp.views import HomeView, AboutView, VenueCreateView, ReviewCreateView, ReviewUpdateView, ReviewDeleteView
+>>>>>>> 10a150481540914e31f16b12c0338806ad3662b2
 
 urlpatterns = [
     # Home
@@ -8,6 +12,11 @@ urlpatterns = [
     path('about', AboutView.as_view(), name='about'),
     path('venuecreate', VenueCreateView.as_view(), name='venue_create'),
     path('reviewcreate', ReviewCreateView.as_view(), name='review_create'),
+<<<<<<< HEAD
    
+=======
+    path('reviewupdate/<int:pk>', ReviewUpdateView.as_view(), name='review_update'),
+    path('reviewdelete/<int:pk>', ReviewDeleteView.as_view(), name='review_delete')
+>>>>>>> 10a150481540914e31f16b12c0338806ad3662b2
 ]
 urlpatterns += staticfiles_urlpatterns()

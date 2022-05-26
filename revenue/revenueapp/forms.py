@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from revenueapp.models import Venue, Review
+from revenueapp.models import Review
 
 class ReviewUpdateForm(ModelForm):
     """Form for updating a venue review."""
