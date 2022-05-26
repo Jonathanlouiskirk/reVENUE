@@ -36,5 +36,21 @@ class ReviewCreateView(CreateView):
     success_url = reverse_lazy('home')
  
 class IndividualVenueView(View):
-    def get(self, request):
-        return render(request=request, template_name='individual_venue.html')
+    def get(self, request,venue_id):
+        review = Review.objects.get(venue_id=venue_id)
+        seating=review.seating_rating
+        sound=review.sound_rating
+        scene=review.scene_rating
+        bathrooms=review.bathroom_rating
+        overall=review.overall_rating
+        comments=review.comments
+        return render(request=request, template_name='individual_venue.html',context={
+            'seating':seating,
+            'sound':sound,
+            'scene':scene,
+            'bathrooms':bathrooms,
+            'overall':overall,
+            'comments':comments,
+        
+        }
+        )
