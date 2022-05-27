@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <link rel='stylesheet' href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reVENUE Review a Venue</title>
+</head>
+
+<div class="header">
+    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
+  </div>
+
+  <body style="background-color:rgb(51, 51, 51);">
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+            <li><a href="{% url 'review_create' %}">Review</a></li>
+        </ul>
+    </div>
+    <br>
+    <p style="color: #f2f2f2; padding: 1em; width: 600px; display: block; margin-left: auto; margin-right: auto; text-align: center;">Had a different experience than that first time?  Please feel free to update your review for this venue here!</p>
+    {% comment %} Display the form {% endcomment %}
+    <form action="" method="post" style="color: #f2f2f2; border:3px; border-style:solid; border-color:#2a52be; padding: 1em; width: 600px; display: block; margin-left: auto; margin-right: auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+        <input type="submit" name="Cancel" value="Cancel">
+    </form>
+    
+    
+</body>
+</html>
