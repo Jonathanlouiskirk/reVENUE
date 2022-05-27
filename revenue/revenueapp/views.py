@@ -100,3 +100,4 @@ class ReviewDeleteView(View):
         review.delete()
         # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
         return redirect('home')
+
