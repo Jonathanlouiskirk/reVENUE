@@ -34,7 +34,7 @@
     <div class="listbar">    
     <ul>
         {% for venue in venues %}
-            <li><a href="{% url 'review_create' %}">{{venue.name }}</a></li>
+            <li><a href="{% url 'individual_venue' venue.id %}">{{ venue.name }}</a></li>
         {% endfor %}
     </ul>
     </div>

@@ -143,25 +143,26 @@ button:hover {
     
     <br>
     <br>
-    
+    <h4>{{ venue.name }}</h4>
    
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmuwOSTMw_f43FBjLCDMpAQiydQdFDYMiNJw&usqp=CAU" alt="10 best venues in houston.com" width="75%" class="center">
+    <img src="{{ venue.image }}" alt="10 best venues in houston.com" width="75%" class="center">
 
 
 
 
       
-      <p>Please update or delete your venue</p>
+      <p>Please update or delete your review</p>
 
       <div class="clearfix">
-        <button type="button" class="updatebtn">Update</button>
+        <a href="{% url 'review_update' venue_id %}" type="button" class="updatebtn">Update</a>
+
         <button type="button" class="deletebtn">Delete</button>
       </div>
     </div>
   </form>
 </div>
+<!--
 
-</body>
 <html>
 <span class="heading">Venue Rating</span>
 <span class="fa fa-star checked"></span>
@@ -229,4 +230,15 @@ button:hover {
     <div>20</div>
   </div>
 </div>
+-->
+</div>
+<div class="side">Bathroom:
+  <div>{{ bathrooms }} star</div>
+</div>
+<div class="middle">
+  <div class="bar-container">
+    <div class="bar-{{ bathrooms }}"></div>
+  </div>
+</div>
+</body>
 </html>

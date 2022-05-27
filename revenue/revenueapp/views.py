@@ -10,7 +10,9 @@ from revenueapp.forms import ReviewUpdateForm
 
 class HomeView(View):
     def get(self, request):
-        venues = Venue.objects.all()
+        venue_ids=Review.objects.values_list('venue',flat=True)
+        print(venue_ids)   
+        venues = Venue.objects.filter(id__in=venue_ids)
         context ={
             'venues' : venues
         }
@@ -36,14 +38,15 @@ class ReviewCreateView(CreateView):
     success_url = reverse_lazy('home')
  
 class IndividualVenueView(View):
-    def get(self, request,venue_id):
-        review = Review.objects.get(venue_id=venue_id)
+    def get(self, request,pk):
+        review = Review.objects.get(venue_id=pk)
         seating=review.seating_rating
         sound=review.sound_rating
         scene=review.scene_rating
-        bathrooms=review.bathroom_rating
+        bathrooms=review.bathrooms_rating
         overall=review.overall_rating
         comments=review.comments
+        venue=Venue.objects.get(id=pk)
         return render(request=request, template_name='individual_venue.html',context={
             'seating':seating,
             'sound':sound,
@@ -51,6 +54,9 @@ class IndividualVenueView(View):
             'bathrooms':bathrooms,
             'overall':overall,
             'comments':comments,
+            'venue_id':pk,
+            'venue':venue
+
         
         }
         )
