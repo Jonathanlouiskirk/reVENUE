@@ -154,9 +154,10 @@ button:hover {
       <p>Please update or delete your review</p>
 
       <div class="clearfix">
-        <a href="{% url 'review_update' venue_id %}" type="button" class="updatebtn">Update</a>
+        <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
 
-        <button type="button" class="deletebtn">Delete</button>
+        <div class="clearfix">
+          <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
       </div>
     </div>
   </form>
@@ -232,13 +233,54 @@ button:hover {
 </div>
 -->
 </div>
-<div class="side">Bathroom:
-  <div>{{ bathrooms }} star</div>
+<div class="side">Seating:
+  <div>{{ seating }} star</div>
 </div>
 <div class="middle">
   <div class="bar-container">
-    <div class="bar-{{ bathrooms }}"></div>
+    <div class="bar-{{ seating }}"></div>
   </div>
 </div>
+<div class="side">Sound:
+  <div> {{ sound }} star</div>
+</div>
+<div class="middle">
+  <div class="bar-container">
+    <div class="bar-{{ sound }}"></div>
+  </div>
+</div>
+<div class="side">Scene:
+  <div>{{ scene }} star</div>
+</div>
+<div class="middle">
+  <div class="bar-container">
+    <div class="bar-{{ scene }}"></div>
+  </div>
+</div>
+  <div class="side">Bathroom:
+    <div>{{ bathrooms }} star</div>
+      </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-{{ bathrooms }}"></div>
+        </div>
+
+  <div class="side">Overall:
+    <div>{{ overall }} </div>
+      </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-{{ overall }}"></div>
+        </div>
+
+  <div class="side">Comments:
+    <div>{{ comments }} 
+      </div>
+  <div class="middle">
+    <div class="text-container">
+      </div> 
+  
+  </div>
+    
 </body>
 </html>
