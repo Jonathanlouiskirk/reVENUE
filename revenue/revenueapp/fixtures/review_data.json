@@ -1,5 +1,26 @@
 [
     {
+        "model":"revenueapp.genre",
+        "pk": 1,
+        "fields":{
+            "name":"Rock"
+        }
+    },
+    {
+        "model":"revenueapp.genre",
+        "pk": 2,
+        "fields":{
+            "name":"Pop"
+        }
+    },
+    {
+        "model":"revenueapp.genre",
+        "pk": 3,
+        "fields":{
+            "name":"Jazz"
+        }
+    },
+    {
         "model": "revenueapp.venue", 
         "pk": 1, 
         "fields": {
@@ -16,7 +37,7 @@
         "model": "revenueapp.venue", 
         "pk": 2, 
         "fields": {
-            "name": "One World Theathre", 
+            "name": "One World Theatre", 
             "address": "7701 Bee Caves Rd", 
             "city": "Austin", 
             "state": "TX", 

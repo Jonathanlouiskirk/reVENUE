@@ -10,9 +10,11 @@ from revenueapp.forms import ReviewUpdateForm
 
 class HomeView(View):
     def get(self, request):
+        # Retrieve venues that have a review
         venue_ids=Review.objects.values_list('venue',flat=True)
-        print(venue_ids)   
+        # print(venue_ids)
         venues = Venue.objects.filter(id__in=venue_ids)
+        
         context ={
             'venues' : venues
         }
