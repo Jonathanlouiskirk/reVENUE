@@ -32,6 +32,7 @@ $ pip install -r requirements.txt
 To be able to utilize the app with some venues already in it, we created a fixture (a collection of data, within a JSON file).  Please run the following command to load this data:
 
 ```bash
+$ python manage.py migrate
 $ py manage.py loaddata review_data.json
 ```
 
