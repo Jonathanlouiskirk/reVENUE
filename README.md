@@ -9,6 +9,12 @@ For our final assignment, the WOW Project, we created a Web App in which users c
 
 ### Usage
 
+![Screen Shot 2022-05-27 at 7 50 08 PM](https://user-images.githubusercontent.com/98712708/170801498-9bada153-275d-4094-80de-e73d78ca8abc.png)
+![Screen Shot 2022-05-27 at 7 49 29 PM](https://user-images.githubusercontent.com/98712708/170801519-fd1ea7a0-a7ea-4e14-aeb9-7fead3853383.png)
+![Screen Shot 2022-05-27 at 7 50 36 PM](https://user-images.githubusercontent.com/98712708/170801505-97cefd3f-85fd-4a06-a287-5c0042f1d9f9.png)
+![Screen Shot 2022-05-27 at 7 50 18 PM](https://user-images.githubusercontent.com/98712708/170801514-6cab43af-72b4-4e8a-a123-adb3b73b96d1.png)
+![Screen Shot 2022-05-27 at 7 53 06 PM](https://user-images.githubusercontent.com/98712708/170801515-d9f4e3f3-3d2b-4dcd-b46e-06ea293da1b1.png)
+
 First, please clone a copy of the project into your local directory:
 
 ```bash
@@ -29,10 +35,11 @@ Move into the "revenue" directory, and install the packages from `requirements.t
 $ pip install -r requirements.txt
 ```
 
-To be able to utilize the app with some venues already in it, we created a fixture (a collection of data, within a JSON file).  Please run the following command to load this data:
+To be able to utilize the app with some venues already in it, we created a fixture (a collection of data, within a JSON file).  Please run the following commands to load this data:
 
 ```bash
 $ py manage.py loaddata review_data.json
+$ python manage.py migrate
 ```
 
 Now you are ready to run the server:
@@ -42,5 +49,5 @@ $ py manage.py runserver
 ```
 
 You are all set!  Visit our app at the following link on your browser: http://localhost:8000/revenue/ 
-
+Welcome to our app! To start, just rate your favorite venue from the list. Or add a new venue to the list: 
 Tell us what you think!  We'd love your feedback!
