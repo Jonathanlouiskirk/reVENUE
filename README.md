@@ -1,5 +1,5 @@
 <h2 align="center">reVENUE</h2>
-<h4 align="center">A music venue review web app built with Djando framework</h4>
+<h4 align="center">A music venue review web app built with Django framework</h4>
 <p align="center">Justice Through Code, Columbia University</p>
 <p align="center">Jonathan Kirk, Chris Storrer, Jonathan Then</p>
 
