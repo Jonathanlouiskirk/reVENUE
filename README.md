@@ -44,4 +44,6 @@ $ py manage.py runserver
 
 You are all set!  Visit our app at the following link on your browser: http://localhost:8000/revenue/ 
 
+WELCOME TO OUR SITE!  To start, you must review a venue. please pick one of the venues already on the home page or create a new venue to review. ENJOY!!
+
 Tell us what you think!  We'd love your feedback!
