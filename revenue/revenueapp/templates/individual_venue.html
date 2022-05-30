@@ -56,15 +56,15 @@
   /* The bar container */
   .bar-container {
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: #eef2f4;
     text-align: center;
-    color: white;
+    color: rgb(239, 12, 12);
   }
   
   /* Individual bars */
   .bar-5 {width: 60%; height: 18px; background-color: #63ef3d;}
   .bar-4 {width: 30%; height: 18px; background-color: #9a6ee5;}
-  .bar-3 {width: 10%; height: 18px; background-color: #f73f67;}
+  .bar-3 {width: 10%; height: 18px; background-color: #0e2cee;}
   .bar-2 {width: 4%; height: 18px; background-color: #94edf5;}
   .bar-1 {width: 15%; height: 18px; background-color: #6b0e07;}
   * {box-sizing: border-box}
@@ -93,13 +93,13 @@ button:hover {
 
 /* Add a color to the cancel button */
 .cancelbtn {
-  background-color: #ccc;
-  color: black;
+  background-color: rgb(8, 70, 5);
+  color: rgb(166, 13, 13);
 }
 
 /* Add a color to the delete button */
 .deletebtn {
-  background-color: #f44336;
+  background-color: #a0180e;
 }
 
 /* Add padding and center-align text to the container */
@@ -151,9 +151,10 @@ button:hover {
 
 
       
-      <p>Please update or delete your review</p>
+    <p style="color:white;">Please update or delete your review</p>
 
       <div class="clearfix">
+        
         <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
 
         <div class="clearfix">
@@ -165,7 +166,10 @@ button:hover {
 <!--
 
 <html>
-<span class="heading">Venue Rating</span>
+
+
+<div class="row">
+  <div class="side"><span class="heading">Venue Rating</span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -173,66 +177,21 @@ button:hover {
 <span class="fa fa-star"></span>
 <p>4.1 average based on 254 reviews.</p>
 <hr style="border:3px solid #f1f1f1">
-
-<div class="row">
-  <div class="side">
     <div>5 star</div>
   </div>
   <div class="middle">
     <div class="bar-container">
       <div class="bar-5"></div>
     </div>
-  </div>
-  <div class="side right">
-    <div>150</div>
-  </div>
-  <div class="side">
-    <div>4 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-4"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>63</div>
-  </div>
-  <div class="side">
-    <div>3 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-3"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>15</div>
-  </div>
-  <div class="side">
-    <div>2 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-2"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>6</div>
-  </div>
-  <div class="side">
-    <div>1 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-1"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>20</div>
-  </div>
-</div>
+ 
 -->
+
+
+
+
+  
 </div>
+<div style="color:white">
 <div class="middle">Seating:
   <div>{{ seating }} star</div>
 </div>
@@ -241,6 +200,7 @@ button:hover {
     <div class="bar-{{ seating }}"></div>
   </div>
 </div>
+<div style="color:white">
 <div class="middle">Sound:
   <div> {{ sound }} star</div>
 </div>
@@ -249,6 +209,7 @@ button:hover {
     <div class="bar-{{ sound }}"></div>
   </div>
 </div>
+<div style="color:white">
 <div class="middle">Scene:
   <div>{{ scene }} star</div>
 </div>
@@ -257,6 +218,7 @@ button:hover {
     <div class="bar-{{ scene }}"></div>
   </div>
 </div>
+  <div style="color:white">
   <div class="middle">Bathroom:
     <div>{{ bathrooms }} star</div>
       </div>
@@ -265,15 +227,17 @@ button:hover {
       <div class="bar-{{ bathrooms }}"></div>
     </div>
   </div>
+  <div style="color:white">
   <div class="middle">Overall:
-    <div>{{ overall }} </div>
+    <div> {{ overall }} star</div>
       </div>
   <div class="middle">
     <div class="bar-container">
       <div class="bar-{{ overall }}"></div>
     </div>
   </div>
-  <div class="side right">Comments:
+  <div style="color:rgb(242, 241, 249)">
+    <div class="side right">Comments:
     <div>{{ comments }} 
   </div>
   <div class="side right">
