@@ -1,5 +1,5 @@
 <h2 align="center">reVENUE</h2>
-<h4 align="center">A music venue review web app built with Djando framework</h4>
+<h4 align="center">A music venue review web app built with Django framework</h4>
 <p align="center">Justice Through Code, Columbia University</p>
 <p align="center">Jonathan Kirk, Chris Storrer, Jonathan Then</p>
 
@@ -16,7 +16,7 @@ $ git clone https://github.com/Jonathanlouiskirk/reVENUE.git
 ```
 
 Then, create a Python virtual environment and activate it in your local project:
-(The below activate command is for Mac users; for PC you will need to run django-env\Scripts\activate.ps1).
+(The below activate command is for Mac users; for PC you will need to run venv\Scripts\activate.ps1).
 
 ```bash
 $ py -m venv venv
@@ -32,6 +32,7 @@ $ pip install -r requirements.txt
 To be able to utilize the app with some venues already in it, we created a fixture (a collection of data, within a JSON file).  Please run the following command to load this data:
 
 ```bash
+$ py manage.py migrate
 $ py manage.py loaddata review_data.json
 ```
 
@@ -42,5 +43,7 @@ $ py manage.py runserver
 ```
 
 You are all set!  Visit our app at the following link on your browser: http://localhost:8000/revenue/ 
+
+WELCOME TO OUR SITE!  To start, you must review a venue. please pick one of the venues already on the home page or create a new venue to review. ENJOY!!
 
 Tell us what you think!  We'd love your feedback!
