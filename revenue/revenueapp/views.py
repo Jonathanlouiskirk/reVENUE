@@ -1,5 +1,5 @@
 """Views module for revenueapp."""
-from unicodedata import name
+# from unicodedata import name
 from django.shortcuts import render,redirect
 from django.views import View
 # Django built-in edit views
@@ -10,15 +10,13 @@ from revenueapp.forms import ReviewUpdateForm
 
 class HomeView(View):
     def get(self, request):
-        # Retrieve venues that have a review
-        venue_ids=Review.objects.values_list('venue',flat=True)
-        # print(venue_ids)
-        venues = Venue.objects.filter(id__in=venue_ids)
         
+        venues = Venue.objects.all()
         context ={
             'venues' : venues
         }
-        
+
+     
         return render(
             request=request, template_name='home.html', context=context
             )
@@ -41,28 +39,56 @@ class ReviewCreateView(CreateView):
  
 class IndividualVenueView(View):
     def get(self, request,pk):
-        review = Review.objects.get(venue_id=pk)
-        seating=review.seating_rating
-        sound=review.sound_rating
-        scene=review.scene_rating
-        bathrooms=review.bathrooms_rating
-        overall=review.overall_rating
-        comments=review.comments
-        venue=Venue.objects.get(id=pk)
+      
+        review_exist = Review.objects.filter(venue_id=pk).exists()
+        venue = Venue.objects.get(id=pk)
+        name = venue.name
+        address = venue.address
+        city = venue.city
+        state = venue.state
+        website = venue.website
+        image = venue.image
+
+        if review_exist:
+            review = Review.objects.get(venue_id=pk)
+            seating=review.seating_rating
+            sound=review.sound_rating
+            scene=review.scene_rating
+            bathrooms=review.bathrooms_rating
+            overall=review.overall_rating
+            comments=review.comments
+            # venue=Venue.objects.get(id=pk)
+            return render(request=request, template_name='individual_venue.html',context={
+                'name': name,
+                'address':address,
+                'city':city,
+                'state':state,
+                'website':website,
+                'image':image,
+                'review_exist':review_exist,
+                'seating':seating,
+                'sound':sound,
+                'scene':scene,
+                'bathrooms':bathrooms,
+                'overall':overall,
+                'comments':comments,
+                'venue_id':pk,
+                'venue':venue
+                }
+                )
+       
         return render(request=request, template_name='individual_venue.html',context={
-            'seating':seating,
-            'sound':sound,
-            'scene':scene,
-            'bathrooms':bathrooms,
-            'overall':overall,
-            'comments':comments,
-            'venue_id':pk,
-            'venue':venue
+                'name':name,
+                'address':address,
+                'city':city,
+                'state':state,
+                'website':website,
+                'image':image,
+                'venue':venue
+               
 
-        
         }
-        )
-
+                )
 class ReviewUpdateView(View):
     def get(self, request, pk):
         # get the review object where venue id = pk

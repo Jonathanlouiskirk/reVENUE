@@ -142,26 +142,20 @@ button:hover {
 </div>
     
     <br>
-    <br>
+    <br><div style="color:white">
     <h4>{{ venue.name }}</h4>
-   
-    <img src="{{ venue.image }}" alt="10 best venues in houston.com" width="75%" class="center">
+    <h4>{{ venue.address }}</h4>
+    <h4>{{ venue.city }}</h4>
+    <h4>{{ venue.state }}</h4>
+    <h4>{{ venue.website }}</h4>
+   </div>
+    <img src="{{ venue.image }}" width="75%" class="center">
 
 
 
 
       
-    <p style="color:white;">Please update or delete your review</p>
-
-      <div class="clearfix">
-        
-        <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
-
-        <div class="clearfix">
-          <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
-      </div>
-    </div>
-
+   
 
 <!--
 
@@ -189,7 +183,18 @@ button:hover {
 
 
 
-  
+  {%if review_exist%}
+  <p style="color:white;">Please update or delete your review</p>
+
+  <div class="clearfix">
+    
+    <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
+
+    <div class="clearfix">
+      <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
+  </div>
+</div>
+
 </div>
 <div style="color:white">
 <div class="middle">Seating:
@@ -243,7 +248,9 @@ button:hover {
   <div class="side right">
     <div class="text-container"> </div>
   </div> 
+ 
   
+  {%endif%}
   
     
 </body>
