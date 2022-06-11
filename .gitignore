@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 .vscode/
 project-notes.md
+auth-notes.md
