@@ -2,6 +2,8 @@
 # from unicodedata import name
 from django.shortcuts import render,redirect
 from django.views import View
+# User model
+from django.contrib.auth.models import User
 # Django built-in edit views
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
@@ -31,9 +33,14 @@ class VenueCreateView(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('home')
     
-# Testing foreignkey relationships in CreateView
 class ReviewCreateView(CreateView):
     model = Review
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+
+# Testing User creation
+class UserCreateView(CreateView):
+    model = User
     fields = '__all__'
     success_url = reverse_lazy('home')
  
