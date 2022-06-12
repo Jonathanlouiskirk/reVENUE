@@ -144,6 +144,6 @@ class ReviewDeleteView(View):
         return redirect('home')
 
 # Landing page for developer convenience
-class DevView(LoginRequiredMixin, View):
+class DevView(View):
     def get(self, request):
         return render(request, 'dev.html')
