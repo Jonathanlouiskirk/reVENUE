@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reVENUE Links</title>
+</head>
+<body>
+    <h1>Links for testing</h1>
+    <ul>
+    
+        <li><a href="{% url 'user_create' %}">New User Registration</a></li>
+    
+        <li>Hello {{ user.username }} </li>
+        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a> </li>
+    
+        <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+    </ul>
+</body>
+</html>

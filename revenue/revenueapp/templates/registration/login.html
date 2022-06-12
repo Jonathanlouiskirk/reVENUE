@@ -20,7 +20,7 @@
         post request is sent. It is used to redirect the user to the page they
         were on before they logged in.
         {% endcomment %}
-        <input type="hidden" name="next" value="{% url 'home' %}" />
+        <input type="hidden" name="next" value="{{ next }}" />
     </form>
 
 </body>
