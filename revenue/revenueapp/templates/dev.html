@@ -13,7 +13,7 @@
         <li><a href="{% url 'user_create' %}">New User Registration</a></li>
     
         <li>Hello {{ user.username }} </li>
-        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a> </li>
+        <li><a href="{% url 'logout' %}">Logout</a> </li>
     
         <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
     </ul>
