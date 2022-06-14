@@ -1,189 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <form> method="post"
-      {% csrf_token %}
-      {% comment %}       #need to find were to put!
-      This form variable is created automatically by CreateView generic view.
-      form.as_p renders the form vertically. 
-      {% endcomment %}
-      {{ form.as_p }}
-      <input> type="submit" value="Save">
-  </form>-->
-<head>
-   <style>@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-      /* common colors */
-      :root {
-         --accent-bg: #BBBBBB;
-         --accent-color: #661919;
-      }
-      
-      /* general text formatting */
-      h1, body, legend, p {
-       font-family: "Open Sans", Verdana, Arial, sans-serif;
-      }
-      body {
-         font-size: 100%;
-         background-color: #E8EAF6;
-      }
-      
-      /* header */
-      header {
-        color: white;
-        background-color: #040604;
-        margin: 0em 4em 0.25em 4em;
-      }
-      header h1 { 
-        padding: 0.5rem 0 0 1.25rem;
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      header p { 
-        font-size: 1rem;
-        font-style: italic;
-        margin: 0;
-        padding: 0 0 1rem 1.25rem;
-      }
-      
-      /* main article styling */
-      main {
-         background-color: white;
-         margin: 1em 4em 1em 4em;
-         padding: 1em;
-      }
-      
-      section {
-         margin-bottom: 1em;
-         padding: 0;
-         width: 100%;
-      }
-      
-      /** form styling */
-      legend {
-         margin: 0;
-         padding: 0;
-         background-color: var(--accent-bg);
-         color: #e6f42e;
-         text-transform: uppercase;
-         width: 100%;
-      }
-      
-      fieldset {
-         margin: 0;
-         padding: 0;
-         background-color:#0c0b0b;
-         width: 100%;
-         border: none;
-      }
-      
-      form p {
-         margin-top: 0.5em;
-      }
-      
-      table {
-         border: none; 
-         border-spacing: 0; 
-         width: 100%; 
-         margin: 0 auto; 
-      }
-      
-      table tbody td{
-         line-height: 1.5em;
-         vertical-align: top;
-         padding: 0.5em 0.75em;
-      }
-      
-      /** buttons */
-      .box {
-         border: 1pt solid var(--accent-bg);
-         padding: 0.5em;
-         margin-bottom: 0.4em;
-      }
-      .rectangle {
-         background-color: var(--accent-bg);
-         padding: 0.5em;
-      }
-      .rounded, .reset {
-         border: 2px solid var(--accent-color);
-         border-radius: 7px;
-         text-align: center;
-         font-weight: bold;
-         padding: 0.5em 0 0.5em 0;
-         margin: 0.3em;
-         min-width: 9em;
-         height: 3em;
-      }
-      .reset, .rounded:hover {
-         background-color: transparent;
-         color: var(--accent-color);
-         border-color: var(--accent-color);
-      }
-      .rounded, .reset:hover {
-         background-color: var(--accent-color);
-         color: rgb(223, 223, 50);
-         border-color: white;
-      }
-      button:hover {
-         box-shadow: 2px 2px rgb(208, 252, 64);
-      }
-      
-      /* -- star rating styling -- */
-      div.star_rating {
-         float: left;
-      }
-      
-      input.star {
-         border: 0;
-         width: 1px;
-         height: 1px;
-         overflow: hidden;
-         position: absolute !important;
-         clip: rect(1px 1px 1px 1px);
-         clip: rect(1px, 1px, 1px, 1px);
-         opacity: 0;
-         float: right;
-      }
-      
-      label.star {
-         position: relative;
-         float: right;
-         color: #c8c8c8;
-      }
-      
-      label.star:before {
-         margin: 5px;
-         content: "\f005";
-         font-family: FontAwesome;
-         font-size: 1.5em;
-         color: var(--accent-color);
-         -webkit-user-select: none; /* Safari 3.1+ */
-         -moz-user-select: none; /* Firefox 2+ */
-         -ms-user-select: none; /* IE 10+ */
-         user-select: none;
-      }
-      
-      input.star:checked ~ label.star:before {
-         color: #FFC107;
-      }
-      
-      label.star:hover ~ label.star:before {
-         color: #ffdb70;
-      }
-      
-      label.star:hover:before {
-         color: #FFC107;
-      }</style>
-   
-    
     {% load static %}
-   
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link
-     rel='stylesheet' href="{% static 'styles.css' %}">
+<head>
+    <link rel='stylesheet' href="{% static 'styles.css' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reVENUE</title>
+    <style>
+        a { color: f2f2f2}
+    </style>
 </head>
 
 <div class="header">
@@ -192,21 +18,22 @@
 
 <body style="background-color:rgb(51, 51, 51);">
     
-   <div class="navbar">
-      <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-          <li><a href="{% url 'review_create' %}">Review</a></li>
-      </ul>
-  </div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sdT7cf98F4_QUJiEqs14XwqNaE-vZPzqRQ&usqp=CAU" alt="10 best venues in houston.com" width="60%" class="center">
+<div class="navbar">
+   <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+      <li><a href="{% url 'review_create' %}">Review</a></li>
+   </ul>
+</div>
 
-    <br>
-    <br>
-    
+<br>
+<br>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sdT7cf98F4_QUJiEqs14XwqNaE-vZPzqRQ&usqp=CAU" alt="10 best venues in houston.com" width="60%" class="center">
+
+<br>
   
-   
 <!-- form starts -->
 
 <form method="post">
