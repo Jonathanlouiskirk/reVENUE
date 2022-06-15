@@ -193,4 +193,20 @@ button:hover {
   }
 }
 
-  
+#venue_info {
+  color:rgb(227, 29, 29); 
+  text-align: center; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+} 
+
+#update_delete_text {
+  color:rgb(45, 5, 5); text-align: center; display: block; margin-left: auto; margin-right: auto;
+}
+.clearfix {
+  text-align: center; 
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}

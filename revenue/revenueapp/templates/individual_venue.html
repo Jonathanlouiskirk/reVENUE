@@ -29,7 +29,7 @@
     
 <br>
     
-<div style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">
+<div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, <h4>{{ venue.zipcode }}</h4></h4>
@@ -40,9 +40,9 @@
 <br>
 
 {%if review_exist%}
-  <p style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">Please update or delete your review</p>
+  <p id="update_delete_text" >Please update or delete your review</p>
 
-  <div class="clearfix" style= "text-align: center; display: block; margin-left: auto; margin-right: auto">
+  <div class="clearfix" >
     <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
     <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
   </div>
