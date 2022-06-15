@@ -124,8 +124,8 @@ a:active{
 }
 
 /* The bar container */
-.bar-container {
-  width: 100%;
+.bar_container {
+  width: 70%;
   background-color: #eef2f4;
   text-align: center;
   color: rgb(239, 12, 12);
@@ -142,7 +142,7 @@ a:active{
 /* Set a style for all buttons */
 button {
   background-color: #04AA6D;
-  color: white;
+  color: rgb(49, 12, 12);
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -168,7 +168,7 @@ button:hover {
 /* Add a color to the cancel button */
 .cancelbtn {
   background-color: rgb(8, 70, 5);
-  color: rgb(166, 13, 13);
+  color: rgb(16, 3, 3);
 }
 
 /* Add a color to the delete button */
@@ -194,7 +194,7 @@ button:hover {
 }
 
 #venue_info {
-  color:rgb(227, 29, 29); 
+  color:white; 
   text-align: center; 
   display: block; 
   margin-left: auto; 
@@ -202,11 +202,17 @@ button:hover {
 } 
 
 #update_delete_text {
-  color:rgb(45, 5, 5); text-align: center; display: block; margin-left: auto; margin-right: auto;
+  color:white; text-align: center; display: block; margin-left: auto; margin-right: auto;
 }
 .clearfix {
   text-align: center; 
   display: block; 
   margin-left: auto;
   margin-right: auto;
+}
+#bar_text {
+  color:white;
+}
+#background {
+  background-color:rgb(17, 28, 45);
 }
