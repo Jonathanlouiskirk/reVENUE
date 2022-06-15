@@ -28,6 +28,7 @@
             "address": "1308 E 4th St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://scootinnaustin.com/", 
             "image": "https://6street.com/wp-content/uploads/2015/08/scoot_inn_01-1024x682.jpg", 
             "genres": [1]
@@ -41,6 +42,7 @@
             "address": "7701 Bee Caves Rd", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://oneworldtheatre.org/", 
             "image": "https://oneworldtheatre.org/wp-content/uploads/2015/05/homepage-image-1-1200x620.jpg", 
             "genres": [1]
@@ -54,6 +56,7 @@
             "address": "2538 Guadalupe St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://www.holeinthewallaustin.com/", 
             "image": "https://i0.wp.com/tribeza.com/wp-content/uploads/2022/03/barasa-hole-in-the-wall-1.jpg", 
             "genres": [1]
@@ -67,6 +70,7 @@
             "address": "305 E 5th St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "http://www.antonesnightclub.com/", 
             "image": "https://antonesnightclub.com/wp-content/uploads/2021/05/Hi-Res-Tomar-and-Peterson-Bros-5851-scaled.jpg", 
             "genres": [1]
@@ -80,6 +84,7 @@
             "address": "208 W 4th St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://cedarstreetatx.com/", 
             "image": "https://api.floodmagazine.com/wp-content/uploads/2017/03/FLOODFEST_Frenship-2017-cred_Matthew_Kanzler-2.jpg", 
             "genres": [1]
@@ -93,6 +98,7 @@
             "address": "310 W Willie Nelson Blvd", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "http://www.acl-live.com/", 
             "image": "https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/venue-12880/1411492627.jpg", 
             "genres": [1]
@@ -106,6 +112,7 @@
             "address": "912 Red River St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "http://www.mohawkaustin.com/", 
             "image": "https://lostinaustin.org/wp-content/uploads/2019/02/mohawk-03-1024x683.jpg", 
             "genres": [1]
@@ -119,6 +126,7 @@
             "address": "501 Brushy St", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://parishaustin.com/", 
             "image": "https://assets3.thrillist.com/v1/image/3015433/1200x630", 
             "genres": [1]
@@ -132,6 +140,7 @@
             "address": "2015 E Riverside Dr", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://www.emosaustin.com/", 
             "image": "https://static.spacecrafted.com/d0ff1849232e40769aef8fe7be7d853d/i/c1a873b75fab499d8654dc751d9f5554/2/4SoifmQp45JMgBnHp7ed2/SEVENLIONS-EMOS-11.29.18-11_1920w.jpg", 
             "genres": [1]
@@ -145,6 +154,7 @@
             "address": "1320 S Lamar Blvd", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "http://www.thesaxonpub.com/", 
             "image": "https://lostinaustin.org/wp-content/uploads/2019/06/saxon-pub-08-1024x683.jpg", 
             "genres": [2]
@@ -158,6 +168,7 @@
             "address": "315 Congress Ave", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "http://www.elephantroom.com/", 
             "image": "https://res.cloudinary.com/culturemap-com/image/upload/ar_7:4,c_fill,g_faces:center,w_980/v1445119078/photos/41957.jpg", 
             "genres": [1]
@@ -171,6 +182,7 @@
             "address": "2247 Guadalupe St, Austin, TX 78712", 
             "city": "Austin", 
             "state": "TX", 
+            "zipcode": "78702",
             "website": "https://cactuscafe.org/", 
             "image": "https://lostinaustin.org/wp-content/uploads/2019/06/cactus-cafe-05-1-1024x682.jpg", 
             "genres": [1]
