@@ -2,6 +2,7 @@
 from django.db import models
 # Validation modules
 from django.core.validators import MinLengthValidator
+from django.conf import settings
 
 class Genre(models.Model):
     """A class for genres."""
@@ -39,7 +40,7 @@ class Venue(models.Model):
 class Review(models.Model):
     """Model for a review of a venue."""
     # Venue that is being reviewed
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, unique=True, null=False)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, unique=False, null=False)
     # overall_rating is an integer from 1 to 5 with a default of 1
     class StarRating(models.IntegerChoices):
         """Star rating for a venue."""
@@ -74,3 +75,5 @@ class Review(models.Model):
                         default=StarRating.ONE_STAR
     )
     comments = models.TextField("comments", max_length=500)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)

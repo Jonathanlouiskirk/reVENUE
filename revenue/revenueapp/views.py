@@ -2,11 +2,15 @@
 # from unicodedata import name
 from django.shortcuts import render,redirect
 from django.views import View
+# User model
+from django.contrib.auth.models import User
 # Django built-in edit views
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, FormView
 from django.urls import reverse_lazy
 from revenueapp.models import Venue, Review
-from revenueapp.forms import ReviewUpdateForm
+from revenueapp.forms import ReviewUpdateForm, UserCreateForm
+# login required mixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomeView(View):
     def get(self, request):
@@ -31,11 +35,21 @@ class VenueCreateView(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('home')
     
-# Testing foreignkey relationships in CreateView
 class ReviewCreateView(CreateView):
     model = Review
     fields = '__all__'
     success_url = reverse_lazy('home')
+
+
+# Testing User creation, returns user to dev page upon success
+class UserCreateView(FormView):
+    template_name = 'user_create.html'
+    form_class = UserCreateForm
+    success_url = reverse_lazy('dev')
+
+    def form_valid(self, form):
+        form.save()  # type: ignore
+        return super().form_valid(form)
  
 class IndividualVenueView(View):
     def get(self, request,pk):
@@ -129,3 +143,7 @@ class ReviewDeleteView(View):
         # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
         return redirect('home')
 
+# Landing page for developer convenience
+class DevView(View):
+    def get(self, request):
+        return render(request, 'dev.html')
