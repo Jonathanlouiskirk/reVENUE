@@ -23,7 +23,6 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-        <li><a href="{% url 'review_create' %}">Review</a></li>
     </ul>
 </div>
     
@@ -34,6 +33,8 @@
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
   <h4><a href="{{ venue.website }}">{{ venue.website }}</a></h4>
+  {% comment %} Link to review creation form {% endcomment %}
+    <h4><a href="{% url 'review_create' venue.id %}">Write a Review</a></h4>
 </div>
     <img src="{{ venue.image }}" width="75%" class="center">
 

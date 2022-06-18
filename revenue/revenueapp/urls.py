@@ -9,7 +9,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('about', AboutView.as_view(), name='about'),
     path('venuecreate', VenueCreateView.as_view(), name='venue_create'),
-    path('reviewcreate', ReviewCreateView.as_view(), name='review_create'),
+    path('reviewcreate/<int:pk>', ReviewCreateView.as_view(), name='review_create'),
 
     path('individual_venue/<int:pk>', IndividualVenueView.as_view(), name='individual_venue'),
 

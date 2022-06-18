@@ -35,7 +35,7 @@ class VenueCreateView(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('home')
     
-class ReviewCreateView(CreateView):
+class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     fields = '__all__'
     success_url = reverse_lazy('home')
