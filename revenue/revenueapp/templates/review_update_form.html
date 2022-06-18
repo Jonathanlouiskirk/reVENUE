@@ -19,6 +19,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+            <li><a href="{% url 'logout' %}?next={% url 'individual_venue' venue.id %}">Logout</a></li>
         </ul>
     </div>
     <br>
