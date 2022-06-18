@@ -3,12 +3,12 @@ from revenueapp.models import Review
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-class ReviewUpdateForm(ModelForm):
+class ReviewForm(ModelForm):
     """Form for updating a venue review."""
     class Meta:
         """Meta class for ReviewUpdateForm."""
         model = Review
-        fields = '__all__'
+        exclude = ['owner', 'venue']
 
 class UserCreateForm(UserCreationForm):
     """Form for creating a new user."""

@@ -23,6 +23,8 @@
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+      <li><a href="{% url 'logout' %}?next={% url 'individual_venue' venue.id %}">Logout</a></li>
+
    </ul>
 </div>
 
@@ -34,15 +36,15 @@
 <br>
   
 <!-- form starts -->
-
+<h1> {{ venue.name }} </h1>
 <form method="post">
-   {% csrf_token %}
-   {% comment %} 
-   This form variable is created automatically by CreateView generic view.
-   form.as_p renders the form vertically. 
-   {% endcomment %}
-   {{ form.as_p }}
-   <input type="submit" value="Save">
+    {% csrf_token %}
+    {% comment %} 
+    This form variable is created automatically by CreateView generic view.
+    form.as_p renders the form vertically. 
+    {% endcomment %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
 </form>
 </section>
 </main>
