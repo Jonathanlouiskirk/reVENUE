@@ -27,7 +27,7 @@
             <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
         {% else %}
             <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-            <li><a href="{% url 'user_create' %}">Register</a></li>
+            <li><a href="{% url 'user_create' %}">Sign Up</a></li>
         {% endif %}
     </ul>
 </div>

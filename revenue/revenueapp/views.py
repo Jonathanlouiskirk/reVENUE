@@ -56,8 +56,7 @@ class ReviewCreateView(LoginRequiredMixin, View):
 class UserCreateView(FormView):
     template_name = 'user_create.html'
     form_class = UserCreateForm
-    success_url = reverse_lazy('home')
-
+    success_url = '/accounts/login/?next=/revenue/' #http://127.0.0.1:8000/accounts/login/?next=/revenue/individualvenue/4
     def form_valid(self, form):
         form.save()  # type: ignore
         return super().form_valid(form)
