@@ -30,7 +30,7 @@ class AboutView(View):
         return render(request=request, template_name='about.html')
 
 # CreateView creates a form and passes to the template 'venue_form.html'
-class VenueCreateView(CreateView):
+class VenueCreateView(LoginRequiredMixin, CreateView):
     model = Venue
     fields = '__all__'
     success_url = reverse_lazy('home')
