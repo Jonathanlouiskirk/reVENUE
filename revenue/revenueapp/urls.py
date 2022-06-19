@@ -16,7 +16,7 @@ urlpatterns = [
     path('reviewupdate/<int:pk>', ReviewUpdateView.as_view(), name='review_update'),
     path('reviewdelete/<int:pk>', ReviewDeleteView.as_view(), name='review_delete'),
     # User Create Form
-    path('usercreate', UserCreateView.as_view(), name='user_create'),
+    path('usercreate/', UserCreateView.as_view(), name='user_create'),
     path('dev', DevView.as_view(), name='dev'),
 
 ]

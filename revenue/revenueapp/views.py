@@ -56,7 +56,7 @@ class ReviewCreateView(LoginRequiredMixin, View):
 class UserCreateView(FormView):
     template_name = 'user_create.html'
     form_class = UserCreateForm
-    success_url = reverse_lazy('dev')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         form.save()  # type: ignore
@@ -144,7 +144,8 @@ class ReviewDeleteView(View):
         # Delete the review
         review.delete()
         # redirect to home
-        return redirect('home')
+        return redirect('individual_venue', pk=review.venue_id)
+
     def post(self, request, pk):
         # Get the review where venue id = pk
         review = Review.objects.get(id=pk)
@@ -152,7 +153,7 @@ class ReviewDeleteView(View):
         # Delete the review
         review.delete()
         # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
-        return redirect('home')
+        return redirect('individual_venue', pk=review.venue_id)
 
 # Landing page for developer convenience
 class DevView(View):
