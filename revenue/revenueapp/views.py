@@ -66,36 +66,16 @@ class IndividualVenueView(View):
       
         review_exist = Review.objects.filter(venue_id=pk).exists()
         venue = Venue.objects.get(id=pk)
-        name = venue.name
-        address = venue.address
-        city = venue.city
-        state = venue.state
-        website = venue.website
-        image = venue.image
+
 
         if review_exist:
             review = Review.objects.get(venue_id=pk)
-            seating=review.seating_rating
-            sound=review.sound_rating
-            scene=review.scene_rating
-            bathrooms=review.bathrooms_rating
-            overall=review.overall_rating
-            comments=review.comments
+     
             # venue=Venue.objects.get(id=pk)
             return render(request=request, template_name='individual_venue.html',context={
-                'name': name,
-                'address':address,
-                'city':city,
-                'state':state,
-                'website':website,
-                'image':image,
+
                 'review_exist':review_exist,
-                'seating':seating,
-                'sound':sound,
-                'scene':scene,
-                'bathrooms':bathrooms,
-                'overall':overall,
-                'comments':comments,
+
                 'venue_id':pk,
                 'venue':venue,
                 'review':review,
@@ -103,12 +83,7 @@ class IndividualVenueView(View):
                 )
        
         return render(request=request, template_name='individual_venue.html',context={
-                'name':name,
-                'address':address,
-                'city':city,
-                'state':state,
-                'website':website,
-                'image':image,
+
                 'venue':venue
                
 

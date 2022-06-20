@@ -40,7 +40,7 @@
   <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
   <h4><a href="{{ venue.website }}">{{ venue.website }}</a></h4>
   {% comment %} Link to review creation page {% endcomment %}
-    <h4><a href="{% url 'review_create' venue.id %}">Review this venue</a></h4>
+  <h4><a href="{% url 'review_create' venue.id %}">Review this venue</a></h4>
 </div>
     <img src="{{ venue.image }}" width="75%" class="center">
 
@@ -56,52 +56,52 @@
 
 <div style="color:white">
 <div class="middle">Seating:
-  <div>{{ seating }} star</div>
+  <div>{{ review.seating_rating }} star</div>
 </div>
 <div class="middle">
   <div class="bar-container">
-    <div class="bar-{{ seating }}"></div>
+    <div class="bar-{{ review.seating_rating }}"></div>
   </div>
 </div>
 <div style="color:white">
 <div class="middle">Sound:
-  <div> {{ sound }} star</div>
+  <div> {{ review.sound_rating }} star</div>
 </div>
 <div class="middle">
   <div class="bar-container">
-    <div class="bar-{{ sound }}"></div>
+    <div class="bar-{{ review.sound_rating }}"></div>
   </div>
 </div>
 <div style="color:white">
 <div class="middle">Scene:
-  <div>{{ scene }} star</div>
+  <div>{{ review.scene_rating }} star</div>
 </div>
 <div class="middle">
   <div class="bar-container">
-    <div class="bar-{{ scene }}"></div>
+    <div class="bar-{{ review.scene_rating }}"></div>
   </div>
 </div>
   <div style="color:white">
   <div class="middle">Bathroom:
-    <div>{{ bathrooms }} star</div>
+    <div>{{ review.bathrooms_rating }} star</div>
       </div>
   <div class="middle">
     <div class="bar-container">
-      <div class="bar-{{ bathrooms }}"></div>
+      <div class="bar-{{ review.bathrooms_rating }}"></div>
     </div>
   </div>
   <div style="color:white">
   <div class="middle">Overall:
-    <div> {{ overall }} star</div>
+    <div> {{ review.overall_rating }} star</div>
       </div>
   <div class="middle">
     <div class="bar-container">
-      <div class="bar-{{ overall }}"></div>
+      <div class="bar-{{ review.overall_rating }}"></div>
     </div>
   </div>
   <div style="color:rgb(242, 241, 249)">
     <div class="side right">Comments:
-    <div>{{ comments }} 
+    <div>{{ review.comments }} 
   </div>
   <div class="side right">
     <div class="text-container"> </div>
