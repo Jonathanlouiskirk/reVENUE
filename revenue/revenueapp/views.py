@@ -97,7 +97,8 @@ class IndividualVenueView(View):
                 'overall':overall,
                 'comments':comments,
                 'venue_id':pk,
-                'venue':venue
+                'venue':venue,
+                'review':review,
                 }
                 )
        
