@@ -7,16 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reVENUE</title>
-    <style>
-        a { color: f2f2f2}
-    </style>
+    
 </head>
 
 <div class="header">
  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>  
   </div>
 
-<body style="background-color:rgb(51, 51, 51);">
+<body id="background">
     
 <div class="navbar">
    <ul>
@@ -32,11 +30,11 @@
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sdT7cf98F4_QUJiEqs14XwqNaE-vZPzqRQ&usqp=CAU" alt="10 best venues in houston.com" width="60%" class="center">
 
-<br>
-  
+<h1 id="Review_update_text">Please leave a review</h1>
+
 <!-- form starts -->
 
-<form method="post">
+<form id="Review_form"  method="post">
    {% csrf_token %}
    {% comment %} 
    This form variable is created automatically by CreateView generic view.

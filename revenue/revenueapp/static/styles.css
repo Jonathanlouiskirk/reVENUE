@@ -126,23 +126,47 @@ a:active{
 /* The bar container */
 .bar_container {
   width: 70%;
-  background-color: #eef2f4;
-  text-align: center;
-  color: rgb(239, 12, 12);
+  background-color:white;
+  text-align:middle;
+  color:rgb(243, 235, 235);
 }
 
 /* Individual bars */
-.bar-5 {width: 60%; height: 18px; background-color: #63ef3d;}
-.bar-4 {width: 30%; height: 18px; background-color: #9a6ee5;}
-.bar-3 {width: 10%; height: 18px; background-color: #0e2cee;}
-.bar-2 {width: 4%; height: 18px; background-color: #94edf5;}
-.bar-1 {width: 15%; height: 18px; background-color: #6b0e07;}
+.bar-5 {
+  width: 100%; 
+  height: 18px; 
+  background-color: #63ef3d;
+}
+
+.bar-4 {
+  width: 80%; 
+  height: 18px; 
+  background-color: #9a6ee5;
+}
+
+.bar-3 {
+  width: 60%; 
+  height: 18px; 
+  background-color: #0e2cee;
+}
+
+.bar-2 {
+  width: 40%; 
+  height: 18px; 
+  background-color: #94edf5;
+}
+
+.bar-1 {
+  width: 20%; 
+  height: 18px; 
+  background-color: #6b0e07;
+}
 * {box-sizing: border-box}
 
 /* Set a style for all buttons */
 button {
   background-color: #04AA6D;
-  color: rgb(49, 12, 12);
+  color: rgb(145, 9, 9);
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -193,26 +217,76 @@ button:hover {
   }
 }
 
-#venue_info {
-  color:white; 
-  text-align: center; 
-  display: block; 
-  margin-left: auto; 
-  margin-right: auto;
-} 
+
 
 #update_delete_text {
   color:white; text-align: center; display: block; margin-left: auto; margin-right: auto;
 }
+
 .clearfix {
   text-align: center; 
   display: block; 
   margin-left: auto;
   margin-right: auto;
 }
+
 #bar_text {
   color:white;
 }
+
+/*background entire page*/
 #background {
   background-color:rgb(17, 28, 45);
+}
+
+#Review_update_text {
+  color: white; 
+  padding: 5em;
+  width: 600px;
+  display: block;
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+}
+
+#Review_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#venue_info {
+  color: white; 
+  border-bottom: 4px; 
+  border-bottom-style:solid; 
+  border-bottom-color:#2a52be; 
+  padding: 1em; 
+  width: 700px; 
+  display: block; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#about_heading_text {
+  color: #f2f2f2; 
+  text-align: center;
+}
+
+#about_text {
+  color: #f2f2f2; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
 }
