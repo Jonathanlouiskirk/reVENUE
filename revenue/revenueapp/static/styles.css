@@ -130,7 +130,7 @@ a:active{
   text-align:middle;
   color:white;
 }
-#bar_text {
+.bar_text {
   color:white;
 }
 /* Individual bars */
@@ -236,32 +236,14 @@ button:hover {
 
 /*background entire page*/
 #background {
-  background-color:rgb(220, 225, 235);
+  background-color:rgb(24, 35, 59);
 }
-
-#Review_update_text {
+#home_heading_text {
   color: white; 
-  padding: 5em;
-  width: 600px;
-  display: block;
-  margin-left: auto; 
-  margin-right: auto; 
   text-align: center;
 }
 
-#Review_form {
-  color: white; 
-  border:3px; 
-  border-style:solid; 
-  border-color:#2a52be; 
-  padding: 1em; 
-  width: 600px; 
-  display: block; 
-  margin-left: auto; 
-  margin-right: auto;
-}
-
-#venue_info {
+#home_info_text {
   color: white; 
   border-bottom: 4px; 
   border-bottom-style:solid; 
@@ -303,8 +285,64 @@ button:hover {
   margin-right: auto;
 }
 
-#create_venue_text {
+#create_venue_heading_text {
   color: white; 
+  border-bottom: 4px; 
+  border-bottom-style:solid; 
+  border-bottom-color:#2a52be; 
+  padding: 1em; 
+  width: 700px; 
+  display: block; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+#venue_info {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+#review_update_text {
+  color: white; 
+  border-bottom: 4px; 
+  border-bottom-style:solid; 
+  border-bottom-color:#2a52be; 
+  padding: 1em; 
+  width: 700px; 
+  display: block; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+#Review_update_heading_text {
+  color: white; 
+  padding: 5em;
+  width: 600px;
+  display: block;
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+}
+#Review_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#create_review_heading_text {
+  color: rgb(255, 255, 255); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
   border-bottom-color:#2a52be; 

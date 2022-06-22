@@ -29,7 +29,7 @@
     
 <br>
     
-<div id="about_text">
+<div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, <h4>{{ venue.zipcode }}</h4></h4>
@@ -48,7 +48,7 @@
     <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
   </div>
 
-<div id="bar_text">
+<div class="bar_text">
   <div class="middle">Seating:
     <div>{{ seating }} star</div>
   </div>
@@ -58,7 +58,7 @@
       <div class="bar-{{ seating }}"></div>
     </div>
   </div>
-<div id="bar_text">
+<div class="bar_text">
 <div class="middle">Sound:
   <div> {{ sound }} star</div>
 </div>
@@ -67,7 +67,7 @@
     <div class="bar-{{ sound }}"></div>
   </div>
 </div>
-<div id="bar_text">
+<div class="bar_text">
   <div class="middle">Scene:
     <div>{{ scene }} star</div>
 </div>
@@ -76,7 +76,7 @@
     <div class="bar-{{ scene }}"></div>
   </div>
 </div>
-  <div id="bar_text">
+  <div class="bar_text">
   <div class="middle">Bathroom:
     <div>{{ bathrooms }} star</div>
       </div>
@@ -85,7 +85,7 @@
       <div class="bar-{{ bathrooms }}"></div>
     </div>
   </div>
-  <div id="bar_text">
+  <div class="bar_text">
   <div class="middle">Overall:
     <div> {{ overall }} star</div>
       </div>
@@ -94,7 +94,7 @@
       <div class="bar-{{ overall }}"></div>
     </div>
   </div>
-  <div id="bar_text">
+  <div class="bar_text">
     <div class="side right">Comments:
     <div>{{ comments }} 
   </div>
