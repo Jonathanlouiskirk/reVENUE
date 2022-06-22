@@ -1,7 +1,7 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background: #f1f1f1;
+    background: white;
     margin: 0;
   }
 
@@ -128,7 +128,7 @@ a:active{
   width: 70%;
   background-color:white;
   text-align:middle;
-  color:rgb(243, 235, 235);
+  color:white;
 }
 #bar_text {
   color:white;
@@ -236,7 +236,7 @@ button:hover {
 
 /*background entire page*/
 #background {
-  background-color:rgb(17, 28, 45);
+  background-color:rgb(220, 225, 235);
 }
 
 #Review_update_text {
