@@ -29,7 +29,7 @@
     
 <br>
     
-<div id="venue_info">
+<div id="about_text">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, <h4>{{ venue.zipcode }}</h4></h4>
@@ -40,7 +40,7 @@
 <br>
 
 {%if review_exist%}
-<h1 id="Review_update_text">Please update or delete your review</h1>
+<h1 id="venue_info">Please update or delete your review</h1>
 
 
   <div class="clearfix" >
@@ -49,14 +49,14 @@
   </div>
 
 <div id="bar_text">
-<div class="middle">Seating:
-  <div>{{ seating }} star</div>
-</div>
-<div class="middle">
-  <div class="bar_container">
-    <div class="bar-{{ seating }}"></div>
+  <div class="middle">Seating:
+    <div>{{ seating }} star</div>
   </div>
-</div>
+  <div class="middle">
+    <div class="bar_container">
+      <div class="bar-{{ seating }}"></div>
+    </div>
+  </div>
 <div id="bar_text">
 <div class="middle">Sound:
   <div> {{ sound }} star</div>

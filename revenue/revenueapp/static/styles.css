@@ -130,7 +130,9 @@ a:active{
   text-align:middle;
   color:rgb(243, 235, 235);
 }
-
+#bar_text {
+  color:white;
+}
 /* Individual bars */
 .bar-5 {
   width: 100%; 
@@ -230,9 +232,7 @@ button:hover {
   margin-right: auto;
 }
 
-#bar_text {
-  color:white;
-}
+
 
 /*background entire page*/
 #background {
@@ -275,12 +275,12 @@ button:hover {
 }
 
 #about_heading_text {
-  color: #f2f2f2; 
+  color: white; 
   text-align: center;
 }
 
 #about_text {
-  color: #f2f2f2; 
+  color: white; 
   border:3px; 
   border-style:solid; 
   border-color:#2a52be; 
@@ -289,4 +289,29 @@ button:hover {
   display: block; 
   margin-left: auto; 
   margin-right: auto;
+}
+
+#create_venue_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#create_venue_text {
+  color: white; 
+  border-bottom: 4px; 
+  border-bottom-style:solid; 
+  border-bottom-color:#2a52be; 
+  padding: 1em; 
+  width: 700px; 
+  display: block; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
