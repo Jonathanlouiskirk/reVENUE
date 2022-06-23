@@ -46,7 +46,7 @@
 
 <br>
 
-{%if review_exist%}
+{% for review in reviews %}
   <p style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">Please update or delete your review</p>
 
   <div class="clearfix" style= "text-align: center; display: block; margin-left: auto; margin-right: auto">
@@ -106,8 +106,8 @@
   <div class="side right">
     <div class="text-container"> </div>
   </div> 
-  
-  {%endif%}
+</div>
+  {%endfor%}
   
 </body>
 </html>

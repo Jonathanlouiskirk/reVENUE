@@ -62,33 +62,24 @@ class UserCreateView(FormView):
         return super().form_valid(form)
  
 class IndividualVenueView(View):
-    def get(self, request,pk):
-      
+    def get(self, request, pk):
         review_exist = Review.objects.filter(venue_id=pk).exists()
         venue = Venue.objects.get(id=pk)
-
-
         if review_exist:
-            review = Review.objects.get(venue_id=pk)
-     
-            # venue=Venue.objects.get(id=pk)
+            reviews = Review.objects.filter(venue_id=pk)
             return render(request=request, template_name='individual_venue.html',context={
-
                 'review_exist':review_exist,
-
                 'venue_id':pk,
                 'venue':venue,
-                'review':review,
+                'reviews':reviews,
                 }
                 )
        
         return render(request=request, template_name='individual_venue.html',context={
-
                 'venue':venue
-               
-
         }
                 )
+
 class ReviewUpdateView(View):
     def get(self, request, pk):
         # get the review object where pk = pk
