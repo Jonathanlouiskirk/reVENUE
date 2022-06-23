@@ -13,10 +13,10 @@
 </head>
 
 <div class="header">
-  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
+  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center">
 </div>
 
-<body style="background-color:rgb(51, 51, 51);">
+<body id="background" >
   
 <div class="navbar">
     <ul>
@@ -29,7 +29,7 @@
     
 <br>
     
-<div style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">
+<div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
@@ -40,65 +40,66 @@
 <br>
 
 {%if review_exist%}
-  <p style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">Please update or delete your review</p>
+<h1 id="Individual_venue_heading_text">Please update or delete your review</h1>
 
-  <div class="clearfix" style= "text-align: center; display: block; margin-left: auto; margin-right: auto">
+
+  <div class="clearfix" >
     <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
     <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
   </div>
 
-<div style="color:white">
-<div class="middle">Seating:
-  <div>{{ seating }} star</div>
-</div>
-<div class="middle">
-  <div class="bar-container">
-    <div class="bar-{{ seating }}"></div>
+<div class="bar_text">
+  <div class="middle">Seating:
+    <div>{{ seating }} star</div>
   </div>
 </div>
-<div style="color:white">
+  <div class="middle">
+    <div class="bar_container">
+      <div class="bar-{{ seating }}"></div>
+    </div>
+  </div>
+<div class="bar_text">
 <div class="middle">Sound:
   <div> {{ sound }} star</div>
 </div>
 <div class="middle">
-  <div class="bar-container">
+  <div class="bar_container">
     <div class="bar-{{ sound }}"></div>
   </div>
 </div>
-<div style="color:white">
-<div class="middle">Scene:
-  <div>{{ scene }} star</div>
+<div class="bar_text">
+  <div class="middle">Scene:
+    <div>{{ scene }} star</div>
 </div>
 <div class="middle">
-  <div class="bar-container">
+  <div class="bar_container">
     <div class="bar-{{ scene }}"></div>
   </div>
 </div>
-  <div style="color:white">
+  <div class="bar_text">
   <div class="middle">Bathroom:
     <div>{{ bathrooms }} star</div>
       </div>
   <div class="middle">
-    <div class="bar-container">
+    <div class="bar_container">
       <div class="bar-{{ bathrooms }}"></div>
     </div>
   </div>
-  <div style="color:white">
+  <div class="bar_text">
   <div class="middle">Overall:
     <div> {{ overall }} star</div>
       </div>
   <div class="middle">
-    <div class="bar-container">
+    <div class="bar_container">
       <div class="bar-{{ overall }}"></div>
     </div>
   </div>
-  <div style="color:rgb(242, 241, 249)">
+  <div class="bar_text">
     <div class="side right">Comments:
     <div>{{ comments }} 
   </div>
   <div class="side right">
-    <div class="text-container"> </div>
-  </div> 
+    <div class="text_container"> 
   
   {%endif%}
   
