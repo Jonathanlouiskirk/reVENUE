@@ -45,6 +45,7 @@
     {% endcomment %}
     {{ form.as_p }}
     <input type="submit" value="Save">
+    <a href="{% url 'individual_venue' venue.id %}">Cancel</a>
 </form>
 </section>
 </main>

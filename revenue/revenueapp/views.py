@@ -103,20 +103,22 @@ class ReviewUpdateView(LoginRequiredMixin, View):
 
 class ReviewDeleteView(LoginRequiredMixin, View):
     def get(self, request, pk):
-        # This Get method is for testing only, the 'delete' button will be a POST request.
+        # if this were a confirmation page it would
+        # pass the review in to the template
+        # display the review
+        # and the template would display the delete form with method=post
         review = Review.objects.get(id=pk)
-        # Delete the review
-        review.delete()
+        context = {'review':review}
         # redirect to home
-        return redirect('individual_venue', pk=review.venue_id)
+        return render(request, 'delete_confirmation.html', context=context)
 
     def post(self, request, pk):
         # Get the review where venue id = pk
         review = Review.objects.get(id=pk)
-        
+        if 'Cancel' in request.POST:
+            return redirect('individual_venue', pk=review.venue_id)
         # Delete the review
         review.delete()
-        # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
         return redirect('individual_venue', pk=review.venue_id)
 
 # Landing page for developer convenience
