@@ -233,10 +233,9 @@ button:hover {
 }
 
 
-
 /*background entire page*/
 #background {
-  background-color:rgb(7, 8, 8);
+  background-color:rgb(32, 50, 68);
 }
 #home_heading_text {
   color: white; 
