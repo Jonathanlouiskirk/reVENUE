@@ -26,6 +26,7 @@
     <p style="color: #f2f2f2; padding: 1em; width: 600px; display: block; margin-left: auto; margin-right: auto; text-align: center;">Had a different experience than that first time?  Please feel free to update your review for this venue here!</p>
     {% comment %} Display the form {% endcomment %}
     <form action="" method="post" style="color: #f2f2f2; border:3px; border-style:solid; border-color:#2a52be; padding: 1em; width: 600px; display: block; margin-left: auto; margin-right: auto">
+        <p>{{venue.name | title}}</p>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save">

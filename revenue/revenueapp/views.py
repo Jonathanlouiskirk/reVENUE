@@ -80,30 +80,28 @@ class IndividualVenueView(View):
         }
                 )
 
-class ReviewUpdateView(View):
+class ReviewUpdateView(LoginRequiredMixin, View):
     def get(self, request, pk):
         # get the review object where pk = pk
         review = Review.objects.get(id=pk)
         # create a form instance
         form = ReviewForm(instance=review)
-        venue = Venue.objects.get(review.venue_id)
+        venue = Venue.objects.get(id=review.venue_id)
         context = {'form': form, 'venue': venue}
         return render(request, 'review_update_form.html', context)
     def post(self, request, pk):
-        # if the Cancel button is clicked, redirect to individual venue page where venue id = pk
-        # Right now there is no URL for this, so I'm redirecting to home
-        if 'Cancel' in request.POST:
-            return redirect('home')
-        # Otherwise, the Save button is clicked so update the review
+
         # Get the review object where venue id = pk
         old_review = Review.objects.get(id=pk)
+        if 'Cancel' in request.POST:
+            return redirect('individual_venue', pk=old_review.venue_id)
         # Instantiate the ModelForm with the POST data
         form = ReviewForm(request.POST, instance=old_review)
         # Save the new data
         form.save()
-        return redirect('home')
+        return redirect('individual_venue', pk=old_review.venue_id)
 
-class ReviewDeleteView(View):
+class ReviewDeleteView(LoginRequiredMixin, View):
     def get(self, request, pk):
         # This Get method is for testing only, the 'delete' button will be a POST request.
         review = Review.objects.get(id=pk)
