@@ -77,7 +77,7 @@ class IndividualVenueView(View):
        
         return render(request=request, template_name='individual_venue.html',context={
                 'venue':venue
-        }
+                }
                 )
 
 class ReviewUpdateView(LoginRequiredMixin, View):
