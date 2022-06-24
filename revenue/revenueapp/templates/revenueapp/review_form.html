@@ -16,35 +16,35 @@
 
 <body id="background">
     
-<div class="navbar">
-   <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-      <li><a href="{% url 'review_create' %}">Review</a></li>
-   </ul>
-</div>
+   <div class="navbar">
+      <ul>
+         <li><a href="{% url 'home' %}">Home</a></li>
+         <li><a href="{% url 'about' %}">About</a></li>
+         <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
+         <li><a href="{% url 'review_create' %}">Review</a></li>
+      </ul>
+   </div>
 
-<br>
-<br>
+   <br>
+   <br>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sdT7cf98F4_QUJiEqs14XwqNaE-vZPzqRQ&usqp=CAU" alt="10 best venues in houston.com" width="60%" class="center">
+   <img src="https://d2u8towkwolubl.cloudfront.net/wp-content/uploads/2019/08/32416554_10156247834028608_5492206489370099712_o-1245x615.jpg" width="740px" class="center">
 
-<h1 id="create_review_heading_text">Please leave a review</h1>
+   <h1 id="create_review_heading_text">Please leave a review</h1>
 
-<!-- form starts -->
+   <!-- form starts -->
 
-<form id="Review_form"  method="post">
-   {% csrf_token %}
-   {% comment %} 
-   This form variable is created automatically by CreateView generic view.
-   form.as_p renders the form vertically. 
-   {% endcomment %}
-   {{ form.as_p }}
-   <input type="submit" value="Save">
-</form>
-</section>
-</main>
+   <form id="Review_form"  method="post">
+      {% csrf_token %}
+      {% comment %} 
+      This form variable is created automatically by CreateView generic view.
+      form.as_p renders the form vertically. 
+      {% endcomment %}
+      {{ form.as_p }}
+      <input type="submit" value="Save">
+   </form>
+
+   <br>
 
 </body>
 </html>

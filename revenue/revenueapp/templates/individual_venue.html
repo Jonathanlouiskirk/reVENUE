@@ -7,9 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reVENUE</title>
-    <style>
-        a { color: f2f2f2}
-    </style>
 </head>
 
 <div class="header">
@@ -27,15 +24,14 @@
     </ul>
 </div>
     
-<br>
-    
 <div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
-  <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
+  <h4>{{ venue.city }}, {{ venue.state }} {{ venue.zipcode }}</h4>
   <h4><a href="{{ venue.website }}">{{ venue.website }}</a></h4>
 </div>
-    <img src="{{ venue.image }}" width="75%" class="center">
+
+<img src="{{ venue.image }}" width="740px" class="center">
 
 <br>
 

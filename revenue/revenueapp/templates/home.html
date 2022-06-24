@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reVENUE</title>
-    
 </head>
 
 <div class="header">
@@ -25,21 +24,27 @@
     </div>
     <br>
     <br>
-    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "70%" class = "center">
+
+    <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width="740px" class = "center">
 
     <h1 id="home_heading_text">Welcome to reVENUE! </h1>
+
     <p  id="home_info_text">
-       Please select a venue from the list below to see a review or create your own.  Want to review a venue not on this list?  Simply click on Create a Venue on the link above.  Rock on!<br>
+       Please select a venue from the list below to see a review or create your own.  Want to review a venue not on this list?  Simply click on Create a Venue on the link above.  Rock on!
     </p>
+
     <div class="listbar">    
-    <ul>
-        {% for venue in venues %}
-            <li><a href="{% url 'individual_venue' venue.id %}">{{ venue.name }}</a></li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for venue in venues %}
+                <li>
+                    <a href="{% url 'individual_venue' venue.id %}">{{ venue.name }}</a>
+                    {%if not review_exist%} <p id="if_no_reviews">(No reviews yet)</p>
+                    {%endif%}
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 
+    <br>
 </body>
-
-
 </html>

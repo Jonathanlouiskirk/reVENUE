@@ -219,8 +219,6 @@ button:hover {
   }
 }
 
-
-
 #update_delete_text {
   color:white; text-align: center; display: block; margin-left: auto; margin-right: auto;
 }
@@ -231,7 +229,6 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 /*background entire page*/
 #background {
@@ -299,8 +296,7 @@ button:hover {
 #venue_info {
   color: white; 
   border:3px; 
-  border-style:solid; 
-  border-color:#2a52be; 
+  text-align: center; 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -358,4 +354,9 @@ button:hover {
   text-align: center; 
   margin-left: auto; 
   margin-right: auto; 
+}
+
+#if_no_reviews {
+  color: white; 
+  font-size: small;
 }
