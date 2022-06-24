@@ -13,7 +13,7 @@
     <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
 </div>
 
-<body style="background-color:rgb(51, 51, 51);">
+<body id="background">
     <div class="navbar">
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -23,7 +23,8 @@
 
         </ul>
     </div>
-    <form method="post">
+    <h1 id="create_venue_heading_text">Please create a new venue to review</h1>
+    <form id="Review_form" method="post">
         {% csrf_token %}
         {% comment %} 
         This form variable is created automatically by CreateView generic view.

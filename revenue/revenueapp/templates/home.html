@@ -7,16 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reVENUE</title>
-    <style>
-        a { color: f2f2f2}
-    </style>
+    
 </head>
 
 <div class="header">
     <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
   </div>
 
-<body style="background-color:rgb(51, 51, 51);">
+<body id="background">
     <div class="navbar">
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -34,9 +32,9 @@
     <br>
     <img src= "{% static "media/home_background_1.jpg" %}" alt="venue" width: "70%" class = "center">
 
-
-    <p style="color: #f2f2f2; border-bottom: 4px; border-bottom-style:solid; border-bottom-color:#2a52be; padding: 1em; width: 700px; display: block; text-align: center; margin-left: auto; margin-right: auto">Welcome to reVENUE!<br>
-        {% comment %}<br>Please select a venue from the list below to see a review or create your own.  Want to review a venue not on this list?  Simply click on Create a Venue on the link above.  Rock on!<br>{% endcomment %}
+    <h1 id="home_heading_text">Welcome to reVENUE! </h1>
+    <p  id="home_info_text">
+       Please select a venue from the list below to see a review or create your own.  Want to review a venue not on this list?  Simply click on Create a Venue on the link above.  Rock on!<br>
     </p>
     <div class="listbar">    
     <ul>

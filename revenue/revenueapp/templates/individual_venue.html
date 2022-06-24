@@ -13,10 +13,10 @@
 </head>
 
 <div class="header">
-  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
+  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center">
 </div>
 
-<body style="background-color:rgb(51, 51, 51);">
+<body id="background" >
   
 <div class="navbar">
     <ul>
@@ -34,7 +34,7 @@
     
 <br>
     
-<div style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">
+<div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
@@ -45,43 +45,44 @@
     <img src="{{ venue.image }}" width="75%" class="center">
 
 <br>
+
 {% for review in reviews %}
   {% if review.owner == user %}
-  <p style="color:white; text-align: center; display: block; margin-left: auto; margin-right: auto">Please update or delete your review</p>
+  <h1 id="Individual_venue_heading_text">Please update or delete your review</h1>
 
-  <div class="clearfix" style= "text-align: center; display: block; margin-left: auto; margin-right: auto">
+  <div class="clearfix" >
     <a href="{% url 'review_update' review.id %}" type="button" class="cancelbtn">Update</a>
     <a href="{% url 'review_delete' review.id %}" type="button" class="deletebtn">Delete</a>
   </div>
   {% endif %}
-<div style="color:white">
-<div class="middle">Seating:
-  <div>{{ review.seating_rating }} star</div>
-</div>
+<div class="bar_text">
+  <div class="middle">Seating:
+    <div>{{ review.seating_rating }} star</div>
+  </div>
 <div class="middle">
   <div class="bar-container">
     <div class="bar-{{ review.seating_rating }}"></div>
   </div>
-</div>
-<div style="color:white">
-<div class="middle">Sound:
-  <div> {{ review.sound_rating }} star</div>
-</div>
+ </div>
+<div class="bar_text">
+  <div class="middle">Sound:
+    <div> {{ review.sound_rating }} star</div>
+  </div>
 <div class="middle">
   <div class="bar-container">
     <div class="bar-{{ review.sound_rating }}"></div>
   </div>
 </div>
-<div style="color:white">
-<div class="middle">Scene:
-  <div>{{ review.scene_rating }} star</div>
-</div>
+<div style="bar_text">
+  <div class="middle">Scene:
+    <div>{{ review.scene_rating }} star</div>
+  </div>
 <div class="middle">
   <div class="bar-container">
     <div class="bar-{{ review.scene_rating }}"></div>
   </div>
 </div>
-  <div style="color:white">
+  <div class="bar_text">
   <div class="middle">Bathroom:
     <div>{{ review.bathrooms_rating }} star</div>
       </div>
@@ -90,7 +91,7 @@
       <div class="bar-{{ review.bathrooms_rating }}"></div>
     </div>
   </div>
-  <div style="color:white">
+  <div class="bar_text">
   <div class="middle">Overall:
     <div> {{ review.overall_rating }} star</div>
       </div>
@@ -99,7 +100,7 @@
       <div class="bar-{{ review.overall_rating }}"></div>
     </div>
   </div>
-  <div style="color:rgb(242, 241, 249)">
+  <div class="bar_text">
     <div class="side right">Comments:
     <div>{{ review.comments }} 
   </div>
