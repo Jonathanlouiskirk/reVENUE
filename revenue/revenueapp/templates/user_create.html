@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New User Sign-Up</title>
 </head>
 <body>
     <h1>New User Sign-Up</h1>
@@ -17,5 +17,7 @@
         {{ form.as_p }}
         <input type="submit" value="Save">
     </form>
+    <p>Already registered? <a href="{% url 'login' %}?next=/revenue/">Log In</a></p>
+
 </body>
 </html>

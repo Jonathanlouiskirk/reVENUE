@@ -19,7 +19,12 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-            <li><a href="{% url 'review_create' %}">Review</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+            <li><a href="{% url 'user_create' %}">Sign Up</a></li>
+            {% endif %}
         </ul>
     </div>
     <br>

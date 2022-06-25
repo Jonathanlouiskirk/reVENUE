@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView, FormView
 from django.urls import reverse_lazy
 from revenueapp.models import Venue, Review
-from revenueapp.forms import ReviewUpdateForm, UserCreateForm
+from revenueapp.forms import ReviewForm, UserCreateForm
 # login required mixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -30,118 +30,96 @@ class AboutView(View):
         return render(request=request, template_name='about.html')
 
 # CreateView creates a form and passes to the template 'venue_form.html'
-class VenueCreateView(CreateView):
+class VenueCreateView(LoginRequiredMixin, CreateView):
     model = Venue
     fields = '__all__'
     success_url = reverse_lazy('home')
     
-class ReviewCreateView(CreateView):
-    model = Review
-    fields = '__all__'
-    success_url = reverse_lazy('home')
+class ReviewCreateView(LoginRequiredMixin, View):
+    def get(self, request, pk):
+        venue = Venue.objects.get(pk=pk)
+        form = ReviewForm(initial={'venue': venue})
+        return render(request, 'revenueapp/review_form.html', {'form': form, 'venue': venue})
+    def post(self, request, pk):
+        venue = Venue.objects.get(pk=pk)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.venue = venue
+            review.owner = request.user
+            review.save()
+            return redirect('individual_venue', pk=pk)
+        return render(request, 'revenueapp/review_form.html', {'form': form})
 
 
 # Testing User creation, returns user to dev page upon success
 class UserCreateView(FormView):
     template_name = 'user_create.html'
     form_class = UserCreateForm
-    success_url = reverse_lazy('dev')
-
+    success_url = '/accounts/login/?next=/revenue/' #http://127.0.0.1:8000/accounts/login/?next=/revenue/individualvenue/4
     def form_valid(self, form):
         form.save()  # type: ignore
         return super().form_valid(form)
  
 class IndividualVenueView(View):
-    def get(self, request,pk):
-      
+    def get(self, request, pk):
         review_exist = Review.objects.filter(venue_id=pk).exists()
         venue = Venue.objects.get(id=pk)
-        name = venue.name
-        address = venue.address
-        city = venue.city
-        state = venue.state
-        website = venue.website
-        image = venue.image
-
         if review_exist:
-            review = Review.objects.get(venue_id=pk)
-            seating=review.seating_rating
-            sound=review.sound_rating
-            scene=review.scene_rating
-            bathrooms=review.bathrooms_rating
-            overall=review.overall_rating
-            comments=review.comments
-            # venue=Venue.objects.get(id=pk)
+            reviews = Review.objects.filter(venue_id=pk)
             return render(request=request, template_name='individual_venue.html',context={
-                'name': name,
-                'address':address,
-                'city':city,
-                'state':state,
-                'website':website,
-                'image':image,
                 'review_exist':review_exist,
-                'seating':seating,
-                'sound':sound,
-                'scene':scene,
-                'bathrooms':bathrooms,
-                'overall':overall,
-                'comments':comments,
                 'venue_id':pk,
-                'venue':venue
+                'venue':venue,
+                'reviews':reviews,
                 }
                 )
        
         return render(request=request, template_name='individual_venue.html',context={
-                'name':name,
-                'address':address,
-                'city':city,
-                'state':state,
-                'website':website,
-                'image':image,
                 'venue':venue
-               
-
-        }
+                }
                 )
-class ReviewUpdateView(View):
+
+class ReviewUpdateView(LoginRequiredMixin, View):
     def get(self, request, pk):
-        # get the review object where venue id = pk
-        review = Review.objects.get(venue_id=pk)
+        # get the review object where pk = pk
+        review = Review.objects.get(id=pk)
         # create a form instance
-        form = ReviewUpdateForm(instance=review)
-        # pass the form to the template
-        context = {'form': form}
+        form = ReviewForm(instance=review)
+        venue = Venue.objects.get(id=review.venue_id)
+        context = {'form': form, 'venue': venue}
         return render(request, 'review_update_form.html', context)
     def post(self, request, pk):
-        # if the Cancel button is clicked, redirect to individual venue page where venue id = pk
-        # Right now there is no URL for this, so I'm redirecting to home
-        if 'Cancel' in request.POST:
-            return redirect('home')
-        # Otherwise, the Save button is clicked so update the review
+
         # Get the review object where venue id = pk
-        old_review = Review.objects.get(venue_id=pk)
+        old_review = Review.objects.get(id=pk)
+        if 'Cancel' in request.POST:
+            return redirect('individual_venue', pk=old_review.venue_id)
         # Instantiate the ModelForm with the POST data
-        form = ReviewUpdateForm(request.POST, instance=old_review)
+        form = ReviewForm(request.POST, instance=old_review)
         # Save the new data
         form.save()
-        return redirect('home')
+        return redirect('individual_venue', pk=old_review.venue_id)
 
-class ReviewDeleteView(View):
+class ReviewDeleteView(LoginRequiredMixin, View):
     def get(self, request, pk):
-        # This Get method is for testing only, the 'delete' button will be a POST request.
-        # Get the review where venue id = pk
-        review = Review.objects.get(venue_id=pk)
-        # Delete the review
-        review.delete()
+        # if this were a confirmation page it would
+        # pass the review in to the template
+        # display the review
+        # and the template would display the delete form with method=post
+        review = Review.objects.get(id=pk)
+        context = {'review':review}
         # redirect to home
-        return redirect('home')
+        return render(request, 'delete_confirmation.html', context=context)
+
     def post(self, request, pk):
         # Get the review where venue id = pk
-        review = Review.objects.get(venue_id=pk)
+        review = Review.objects.get(id=pk)
+        if 'Cancel' in request.POST:
+            return redirect('individual_venue', pk=review.venue_id)
         # Delete the review
         review.delete()
-        # Redirect to home, for now. In the future, redirect to the venue page where venue id = pk
-        return redirect('home')
+        return redirect('individual_venue', pk=review.venue_id)
 
 # Landing page for developer convenience
 class DevView(View):
