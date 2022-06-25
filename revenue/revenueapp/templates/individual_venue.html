@@ -23,7 +23,12 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-        <li><a href="{% url 'review_create' %}">Review</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+            <li><a href="{% url 'user_create' %}">Sign Up</a></li>
+        {% endif %}
     </ul>
 </div>
     
@@ -34,74 +39,76 @@
   <h4>{{ venue.address }}</h4>
   <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
   <h4><a href="{{ venue.website }}">{{ venue.website }}</a></h4>
+  {% comment %} Link to review creation page {% endcomment %}
+  <h4><a href="{% url 'review_create' venue.id %}">Review this venue</a></h4>
 </div>
     <img src="{{ venue.image }}" width="75%" class="center">
 
 <br>
 
-{%if review_exist%}
-<h1 id="Individual_venue_heading_text">Please update or delete your review</h1>
-
+{% for review in reviews %}
+  {% if review.owner == user %}
+  <h1 id="Individual_venue_heading_text">Please update or delete your review</h1>
 
   <div class="clearfix" >
-    <a href="{% url 'review_update' venue_id %}" type="button" class="cancelbtn">Update</a>
-    <a href="{% url 'review_delete' venue_id %}" type="button" class="deletebtn">Delete</a>
+    <a href="{% url 'review_update' review.id %}" type="button" class="cancelbtn">Update</a>
+    <a href="{% url 'review_delete' review.id %}" type="button" class="deletebtn">Delete</a>
   </div>
-
+  {% endif %}
 <div class="bar_text">
   <div class="middle">Seating:
-    <div>{{ seating }} star</div>
+    <div>{{ review.seating_rating }} star</div>
   </div>
-</div>
-  <div class="middle">
-    <div class="bar_container">
-      <div class="bar-{{ seating }}"></div>
-    </div>
-  </div>
-<div class="bar_text">
-<div class="middle">Sound:
-  <div> {{ sound }} star</div>
-</div>
 <div class="middle">
-  <div class="bar_container">
-    <div class="bar-{{ sound }}"></div>
+  <div class="bar-container">
+    <div class="bar-{{ review.seating_rating }}"></div>
+  </div>
+ </div>
+<div class="bar_text">
+  <div class="middle">Sound:
+    <div> {{ review.sound_rating }} star</div>
+  </div>
+<div class="middle">
+  <div class="bar-container">
+    <div class="bar-{{ review.sound_rating }}"></div>
   </div>
 </div>
-<div class="bar_text">
+<div style="bar_text">
   <div class="middle">Scene:
-    <div>{{ scene }} star</div>
-</div>
+    <div>{{ review.scene_rating }} star</div>
+  </div>
 <div class="middle">
-  <div class="bar_container">
-    <div class="bar-{{ scene }}"></div>
+  <div class="bar-container">
+    <div class="bar-{{ review.scene_rating }}"></div>
   </div>
 </div>
   <div class="bar_text">
   <div class="middle">Bathroom:
-    <div>{{ bathrooms }} star</div>
+    <div>{{ review.bathrooms_rating }} star</div>
       </div>
   <div class="middle">
-    <div class="bar_container">
-      <div class="bar-{{ bathrooms }}"></div>
+    <div class="bar-container">
+      <div class="bar-{{ review.bathrooms_rating }}"></div>
     </div>
   </div>
   <div class="bar_text">
   <div class="middle">Overall:
-    <div> {{ overall }} star</div>
+    <div> {{ review.overall_rating }} star</div>
       </div>
   <div class="middle">
-    <div class="bar_container">
-      <div class="bar-{{ overall }}"></div>
+    <div class="bar-container">
+      <div class="bar-{{ review.overall_rating }}"></div>
     </div>
   </div>
   <div class="bar_text">
     <div class="side right">Comments:
-    <div>{{ comments }} 
+    <div>{{ review.comments }} 
   </div>
   <div class="side right">
-    <div class="text_container"> 
-  
-  {%endif%}
+    <div class="text-container"> </div>
+  </div> 
+</div>
+{%endfor%}
   
 </body>
 </html>
