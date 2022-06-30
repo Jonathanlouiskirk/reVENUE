@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
     <title>New User Sign-Up</title>
 </head>
 <body>
-    <h1>New User Sign-Up</h1>
-    <form method="post">
+    <h1 id="new_user_heading_text" >New User Sign-Up</h1>
+    <form id="new_user_form" method="post">
         {% csrf_token %}
         {% comment %} 
         This form variable is created automatically by CreateView generic view.
@@ -17,7 +14,9 @@
         {{ form.as_p }}
         <input type="submit" value="Save">
     </form>
-    <p>Already registered? <a href="{% url 'login' %}?next=/revenue/">Log In</a></p>
+    <p id="new_user_footer_text">Already registered? <a href="{% url 'login' %}?next=/revenue/">Log In</a></p>
 
 </body>
 </html>
+
+{%endblock%}
