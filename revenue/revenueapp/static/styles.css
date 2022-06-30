@@ -360,3 +360,80 @@ button:hover {
   color: white; 
   font-size: small;
 }
+#login_update_heading_text {
+  color: white; 
+  text-align: center; 
+}
+#password_recreate_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+#login_update_text {
+  color: white; 
+  text-align: center; 
+}
+#login_update_footer_text {
+  color: white; 
+  text-align: center; 
+}
+#venue_name_text {
+  color: white; 
+  text-align: center; 
+}
+#create_review_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+#create_review_heading_text {
+  color: white; 
+  text-align: center; 
+}
+#delete_review_heading_text {
+  color: white; 
+  border-bottom: 4px; 
+  border-bottom-style:solid; 
+  border-bottom-color:#2a52be; 
+  padding: 1em; 
+  width: 700px; 
+  display: block; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+#delete_review_text {
+  color: white; 
+  text-align: center; 
+}
+#new_user_heading_text {
+  color: white; 
+  text-align: center; 
+}
+#new_user_form {
+  color: white; 
+  border:3px; 
+  border-style:solid; 
+  border-color:#2a52be; 
+  padding: 1em; 
+  width: 600px; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+#new_user_footer_text {
+  color: white; 
+  text-align: center; 
+}

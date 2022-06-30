@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reVENUE Login</title>
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
+   
 </head>
+<h1 id="login_update_heading_text">reVENUE login</h1>
 <body>
     {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
+    <p id="login_update_text">Your username and password didn't match. Please try again.</p>
     {% endif %}
     
-    <form method="post" action="{% url 'login' %}">
+    <form id="password_recreate_form" method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Login" />
@@ -22,7 +20,8 @@
         {% endcomment %}
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
-    <p>Don't have an account? <a href="{% url 'user_create' %}">Sign Up</a></p>
+    <p id="login_update_footer_text">Don't have an account? <a href="{% url 'user_create' %}">Sign Up</a></p>
 
 </body>
 </html>
+{%endblock%}

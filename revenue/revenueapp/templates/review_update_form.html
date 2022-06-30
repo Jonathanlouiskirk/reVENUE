@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <link rel='stylesheet' href="{% static 'styles.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reVENUE Review a Venue</title>
-</head>
-
-<div class="header">
-    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
-  </div>
-
-  <body id="background">
-    <div class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-            <li><a href="{% url 'logout' %}?next={% url 'individual_venue' venue.id %}">Logout</a></li>
-        </ul>
-    </div>
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
     <br>
     <h1 id="Review_update_heading_text">Review update</h1>
     <p id="review_update_text" >Had a different experience than that first time?  Please feel free to update your review for this venue here!</p>
@@ -36,3 +15,4 @@
     
 </body>
 </html>
+{%endblock%}
