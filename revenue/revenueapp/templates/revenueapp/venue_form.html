@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel='stylesheet' href="{% static 'styles.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reVENUE Create Venue</title>
-</head>
-
-<div class="header">
-    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
-</div>
-
-<body id="background">
-    <div class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-
-        </ul>
-    </div>
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
+    
     <h1 id="create_venue_heading_text">Please create a new venue to review</h1>
     <form id="Review_form" method="post">
         {% csrf_token %}
@@ -35,3 +14,4 @@
     </form>
 </body>
 </html>
+{%endblock%}

@@ -1,48 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <link rel='stylesheet' href="{% static 'styles.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reVENUE</title>
-    <style>
-        a { color: f2f2f2}
-    </style>
-</head>
-
-<div class="header">
-  <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center">
-</div>
-
-<body id="background" >
-  
-<div class="navbar">
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
-        {% else %}
-            <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-            <li><a href="{% url 'user_create' %}">Sign Up</a></li>
-        {% endif %}
-    </ul>
-</div>
-    
-<br>
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
     
 <div id="venue_info">
   <h1>{{ venue.name }}</h1>
   <h4>{{ venue.address }}</h4>
-  <h4>{{ venue.city }}, {{ venue.state }}, {{ venue.zipcode }}</h4>
+  <h4>{{ venue.city }}, {{ venue.state }} {{ venue.zipcode }}</h4>
   <h4><a href="{{ venue.website }}">{{ venue.website }}</a></h4>
   {% comment %} Link to review creation page {% endcomment %}
   <h4><a href="{% url 'review_create' venue.id %}">Review this venue</a></h4>
 </div>
-    <img src="{{ venue.image }}" width="75%" class="center">
+
+<img src="{{ venue.image }}" width="740px" class="center">
 
 <br>
 
@@ -112,3 +81,4 @@
   
 </body>
 </html>
+{%endblock%}

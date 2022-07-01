@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <link rel='stylesheet' href="{% static 'styles.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reVENUE About</title>
-</head>
-
-<div class="header">
-    <img src= "{% static "media/ReVENUE_logo.png" %}" alt="home" width="25%" class = "center"/>
-  </div>
-
-<body id="background">
-    <div class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'venue_create' %}">Create A Venue</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-            <li><a href="{% url 'user_create' %}">Sign Up</a></li>
-            {% endif %}
-        </ul>
-    </div>
+{%extends "base.html"%}
+{%load static%}
+{%block body%}
 
     <br>
     <br>
@@ -34,5 +8,7 @@
     <p id="about_text">We are Chris, Jon K., and Jon T., and we love music!<br><br>We wanted to create an app that allows the user to rate venues in the Austin area based on different categories.  We were inspired by music blogs and other websites, as well as by our own interests in music and how the world intereacts with it.  Music venues are once again a cultural hub that bring people together, and need our support if they are to thrive and succeed.  We are excited to develop this app that will allow the user to share their experiences with others.<br><br>ReVENUE allows the user to rate the seating, sound, scene, bathroom, and overall experience of a particular venue.  There are several Austin city-area venues to select for a rating.  Currently, reVENUE is setup for one user to enter their ratings and review, but we hope that in the future the app can be developed further to allow for multiple users to interact with it.  reVENUE is scalabled to be used for other cities and multiple venues!<br><br>Let us know what you think of our app.  We welcome your feedback!</p>
     </div>
     
+    <br>
 </body>
 </html>
+{%endblock%}
