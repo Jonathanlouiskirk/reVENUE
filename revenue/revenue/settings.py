@@ -26,7 +26,7 @@ with open('../secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "18.237.14.147", "ec2-18-237-14-147.us-west-2.compute.amazon.aws.com"]
+ALLOWED_HOSTS = ["18.237.14.147", "ec2-18-237-14-147.us-west-2.compute.amazon.aws.com"]
 
 
 
