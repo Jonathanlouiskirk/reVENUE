@@ -118,8 +118,3 @@ class ReviewDeleteView(LoginRequiredMixin, View):
         # Delete the review
         review.delete()
         return redirect('individual_venue', pk=review.venue_id)
-
-# Landing page for developer convenience
-class DevView(View):
-    def get(self, request):
-        return render(request, 'dev.html')
