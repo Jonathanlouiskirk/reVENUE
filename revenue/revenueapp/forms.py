@@ -15,4 +15,4 @@ class UserCreateForm(UserCreationForm):
     class Meta:
         """Meta class for UserCreateForm."""
         model = User
-        fields = ['username', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']

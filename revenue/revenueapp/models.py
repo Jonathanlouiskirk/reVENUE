@@ -27,7 +27,6 @@ class Venue(models.Model):
     city = models.CharField("city", max_length=50)
     state = models.CharField("state", max_length=2)
     zipcode = models.CharField(max_length=5)
-    # phone = models.CharField(max_length=10)
     website = models.URLField("external venue website", max_length=200)
     image = models.URLField("link to an image of venue", max_length=200)
     genres = models.ManyToManyField(Genre, help_text="HINT: Select multiple genres with ctrl/cmd.")
