@@ -41,8 +41,8 @@ body {
 
   /*This changes the color of links on the navigation bar on hover */
 .navbar a:hover {
-    background-color: #2a52be;
-    color: #f2f2f2;
+    background-color: white;
+    color: rgb(32, 11, 32);
   }
 
  /*Listbar styles the list of venues on home page */
@@ -58,8 +58,8 @@ body {
 .listbar a {
   color: f2f2f2;
   font-weight: bold;
-  border-left: 1px solid #2a52be;
-  border-right: 1px solid #2a52be;
+  border-left: 1px solid rgb(248, 164, 228);
+  border-right: 1px solid rgb(248, 164, 228);
   padding: 9px 9px;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -78,7 +78,8 @@ a:link, a:visited {
 }
 
 a:hover{
-  color:#2a52be
+  color: rgb(248, 164, 228); 
+
 }
 
 a:active{
@@ -232,7 +233,7 @@ button:hover {
 
 /*background entire page*/
 #background {
-  background-color:rgb(32, 50, 68);
+  background-color:rgb(32, 11, 32);
 }
 #home_heading_text {
   color: white; 
@@ -243,7 +244,7 @@ button:hover {
   color: white; 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
+  border-bottom-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -261,7 +262,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -283,15 +284,7 @@ button:hover {
 
 #create_venue_heading_text {
   color: white; 
-  border-bottom: 4px; 
-  border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
-  padding: 1em; 
-  width: 700px; 
-  display: block; 
-  text-align: center; 
-  margin-left: auto; 
-  margin-right: auto; 
+  text-align: center;
 }
 #venue_info {
   color: white; 
