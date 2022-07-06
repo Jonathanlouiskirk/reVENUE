@@ -18,8 +18,6 @@
             {% for venue in venues %}
                 <li>
                     <a href="{% url 'individual_venue' venue.id %}">{{ venue.name }}</a>
-                    {%if not review_exist%} <p id="if_no_reviews">(No reviews yet)</p>
-                    {%endif%}
                 </li>
             {% endfor %}
         </ul>
