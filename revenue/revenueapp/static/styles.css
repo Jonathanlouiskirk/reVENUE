@@ -256,6 +256,7 @@ button:hover {
 #about_heading_text {
   color: white; 
   text-align: center;
+  
 }
 
 #about_text {
@@ -264,7 +265,7 @@ button:hover {
   border-style:solid; 
   border-color:rgb(248, 164, 228); 
   padding: 1em; 
-  width: 600px; 
+  width: 800px; 
   display: block; 
   margin-left: auto; 
   margin-right: auto;
@@ -275,7 +276,7 @@ button:hover {
   border:3px; 
   border-style:solid; 
   border-color:#2a52be; 
-  padding: 1em; 
+  padding: 5em; 
   width: 600px; 
   display: block; 
   margin-left: auto; 
@@ -362,8 +363,8 @@ button:hover {
   border:3px; 
   border-style:solid; 
   border-color:#2a52be; 
-  padding: 1em; 
-  width: 600px; 
+  padding: 2em; 
+  width: 300px; 
   display: block; 
   margin-left: auto; 
   margin-right: auto;
@@ -421,7 +422,7 @@ button:hover {
   border-style:solid; 
   border-color:#2a52be; 
   padding: 1em; 
-  width: 600px; 
+  width: 800px; 
   display: block; 
   margin-left: auto; 
   margin-right: auto;
