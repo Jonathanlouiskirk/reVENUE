@@ -16,8 +16,15 @@ class HomeView(View):
     def get(self, request):
         
         venues = Venue.objects.all()
+        venues_dict={}
+        for venue in venues:
+            venues_dict [venue]=venue.review_set.exists()
+           
+        
+           
         context ={
-            'venues' : venues
+            'venues' : venues,
+            'venues_dict' : venues_dict
         }
 
      

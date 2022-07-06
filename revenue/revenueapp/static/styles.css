@@ -19,7 +19,7 @@ body {
   /* Style the links inside the navigation bar */
 .navbar a {
     text-decoration: none;
-    color: #f2f2f2;
+    color: white;
     width: 180px;
     display: block;
     padding: 10px 23px;
@@ -41,7 +41,7 @@ body {
 
   /*This changes the color of links on the navigation bar on hover */
 .navbar a:hover {
-    background-color: white;
+    background-color: rgb(232, 245, 160);
     color: rgb(32, 11, 32);
   }
 
@@ -58,8 +58,8 @@ body {
 .listbar a {
   color: f2f2f2;
   font-weight: bold;
-  border-left: 1px solid rgb(248, 164, 228);
-  border-right: 1px solid rgb(248, 164, 228);
+  border-left: 1px solid rgb(247, 52, 52);
+  border-right: 1px solid rgb(247, 52, 52);
   padding: 9px 9px;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -69,16 +69,16 @@ body {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   font-size: 1.1em;
-  color: f2f2f2
+  color: white
 }
 
  /*This styles the color of the hyperlinks on all pages */
 a:link, a:visited {
-  color: #f2f2f2;
+  color: white;
 }
 
 a:hover{
-  color: rgb(248, 164, 228); 
+  color: rgb(232, 245, 160); 
 
 }
 
@@ -127,42 +127,42 @@ a:active{
 /* The bar container */
 .bar_container {
   width: 70%;
-  background-color:white;
+  background-color:rgb(243, 193, 193);
   text-align:middle;
-  color:white;
+  color:rgb(243, 193, 193);
 }
 .bar_text {
-  color:white;
+  color:rgb(243, 193, 193);
 }
 /* Individual bars */
 .bar-5 {
   width: 100%; 
   height: 18px; 
-  background-color: rgb(248, 164, 228);
+  background-color: rgb(232, 245, 160);
 }
 
 .bar-4 {
   width: 80%; 
   height: 18px; 
-  background-color: rgb(248, 164, 228);
+  background-color: rgb(232, 245, 160);
 }
 
 .bar-3 {
   width: 60%; 
   height: 18px; 
-  background-color: rgb(248, 164, 228);
+  background-color: rgb(232, 245, 160);
 }
 
 .bar-2 {
   width: 40%; 
   height: 18px; 
-  background-color: rgb(248, 164, 228);
+  background-color: rgb(232, 245, 160);
 }
 
 .bar-1 {
   width: 20%; 
   height: 18px; 
-  background-color: rgb(248, 164, 228);
+  background-color: rgb(232, 245, 160);
 }
 * {box-sizing: border-box}
 
@@ -221,7 +221,7 @@ button:hover {
 }
 
 #update_delete_text {
-  color:white; text-align: center; display: block; margin-left: auto; margin-right: auto;
+  color:rgb(243, 193, 193); text-align: center; display: block; margin-left: auto; margin-right: auto;
 }
 
 .clearfix {
@@ -233,18 +233,18 @@ button:hover {
 
 /*background entire page*/
 #background {
-  background-color:rgb(32, 11, 32);
+  background-color:black;
 }
 #home_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center;
 }
 
 #home_info_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:rgb(248, 164, 228); 
+  border-bottom-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -254,16 +254,16 @@ button:hover {
 }
 
 #about_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center;
   
 }
 
 #about_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 800px; 
   display: block; 
@@ -272,10 +272,10 @@ button:hover {
 }
 
 #create_venue_form {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 5em; 
   width: 600px; 
   display: block; 
@@ -284,11 +284,11 @@ button:hover {
 }
 
 #create_venue_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center;
 }
 #venue_info {
-  color: white; 
+  color: rgb(247, 52, 52); 
   border:3px; 
   text-align: center; 
   padding: 1em; 
@@ -298,10 +298,10 @@ button:hover {
   margin-right: auto;
 }
 #review_update_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:rgb(248, 164, 228); 
+  border-bottom-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -310,14 +310,14 @@ button:hover {
   margin-right: auto; 
 }
 #Review_update_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #Review_form {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -326,10 +326,10 @@ button:hover {
 }
 
 #create_review_heading_text {
-  color: rgb(255, 255, 255); 
+  color: rgb(247, 52, 52); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:rgb(248, 164, 228); 
+  border-bottom-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -338,10 +338,10 @@ button:hover {
   margin-right: auto; 
 }
 #Individual_venue_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:rgb(248, 164, 228); 
+  border-bottom-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -351,18 +351,18 @@ button:hover {
 }
 
 #if_no_reviews {
-  color: white; 
+  color: rgb(247, 52, 52); 
   font-size: small;
 }
 #login_update_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #password_recreate_form {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 2em; 
   width: 300px; 
   display: block; 
@@ -370,22 +370,22 @@ button:hover {
   margin-right: auto;
 }
 #login_update_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #login_update_footer_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   text-align: center; 
 }
 #venue_name_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #create_review_form {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -393,14 +393,14 @@ button:hover {
   margin-right: auto;
 }
 #create_review_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #delete_review_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:rgb(248, 164, 228); 
+  border-bottom-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -409,18 +409,18 @@ button:hover {
   margin-right: auto; 
 }
 #delete_review_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   text-align: center; 
 }
 #new_user_heading_text {
-  color: white; 
+  color: rgb(247, 52, 52); 
   text-align: center; 
 }
 #new_user_form {
-  color: white; 
+  color: rgb(243, 193, 193); 
   border:3px; 
   border-style:solid; 
-  border-color:rgb(248, 164, 228); 
+  border-color:rgb(247, 52, 52); 
   padding: 1em; 
   width: 800px; 
   display: block; 
@@ -428,6 +428,6 @@ button:hover {
   margin-right: auto;
 }
 #new_user_footer_text {
-  color: white; 
+  color: rgb(243, 193, 193); 
   text-align: center; 
 }
