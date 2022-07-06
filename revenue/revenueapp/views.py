@@ -14,15 +14,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomeView(View):
     def get(self, request):
-        
         venues = Venue.objects.all()
         context ={
             'venues' : venues
         }
-
-     
         return render(
-            request=request, template_name='home.html', context=context
+            request=request, template_name='home.html', context= context
             )
 
 class AboutView(View):
