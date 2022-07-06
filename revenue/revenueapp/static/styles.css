@@ -138,31 +138,31 @@ a:active{
 .bar-5 {
   width: 100%; 
   height: 18px; 
-  background-color: #63ef3d;
+  background-color: rgb(248, 164, 228);
 }
 
 .bar-4 {
   width: 80%; 
   height: 18px; 
-  background-color: #9a6ee5;
+  background-color: rgb(248, 164, 228);
 }
 
 .bar-3 {
   width: 60%; 
   height: 18px; 
-  background-color: #0e2cee;
+  background-color: rgb(248, 164, 228);
 }
 
 .bar-2 {
   width: 40%; 
   height: 18px; 
-  background-color: #94edf5;
+  background-color: rgb(248, 164, 228);
 }
 
 .bar-1 {
   width: 20%; 
   height: 18px; 
-  background-color: #6b0e07;
+  background-color: rgb(248, 164, 228);
 }
 * {box-sizing: border-box}
 
@@ -275,7 +275,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 5em; 
   width: 600px; 
   display: block; 
@@ -301,7 +301,7 @@ button:hover {
   color: white; 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
+  border-bottom-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -317,7 +317,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -329,7 +329,7 @@ button:hover {
   color: rgb(255, 255, 255); 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
+  border-bottom-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -341,7 +341,7 @@ button:hover {
   color: white; 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
+  border-bottom-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -362,7 +362,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 2em; 
   width: 300px; 
   display: block; 
@@ -385,7 +385,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 600px; 
   display: block; 
@@ -400,7 +400,7 @@ button:hover {
   color: white; 
   border-bottom: 4px; 
   border-bottom-style:solid; 
-  border-bottom-color:#2a52be; 
+  border-bottom-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 700px; 
   display: block; 
@@ -420,7 +420,7 @@ button:hover {
   color: white; 
   border:3px; 
   border-style:solid; 
-  border-color:#2a52be; 
+  border-color:rgb(248, 164, 228); 
   padding: 1em; 
   width: 800px; 
   display: block; 
