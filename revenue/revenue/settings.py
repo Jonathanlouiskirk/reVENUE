@@ -130,6 +130,6 @@ LOGOUT_REDIRECT_URL = 'home'
 
 # Static files handling
 
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES = [STATIC_ROOT]
+#import os
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATICFILES = [STATIC_ROOT]
