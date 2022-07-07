@@ -18,8 +18,11 @@
            {% for venue, review_exists in venues_dict.items %} 
                 <li>
                     <a href="{% url 'individual_venue' venue.id %}">{{ venue.name }}</a>
+
                     {%if not review_exists%} <p id="if_no_reviews">(No reviews yet)</p>
                     {%endif%}
+
+
                 </li>
             {% endfor %}
         </ul>

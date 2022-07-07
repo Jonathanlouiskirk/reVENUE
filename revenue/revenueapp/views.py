@@ -14,7 +14,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomeView(View):
     def get(self, request):
-        
         venues = Venue.objects.all()
         venues_dict={}
         for venue in venues:
@@ -26,10 +25,8 @@ class HomeView(View):
             'venues' : venues,
             'venues_dict' : venues_dict
         }
-
-     
         return render(
-            request=request, template_name='home.html', context=context
+            request=request, template_name='home.html', context= context
             )
 
 class AboutView(View):
@@ -58,12 +55,10 @@ class ReviewCreateView(LoginRequiredMixin, View):
             return redirect('individual_venue', pk=pk)
         return render(request, 'revenueapp/review_form.html', {'form': form})
 
-
-# Testing User creation, returns user to dev page upon success
 class UserCreateView(FormView):
     template_name = 'user_create.html'
     form_class = UserCreateForm
-    success_url = '/accounts/login/?next=/revenue/' #http://127.0.0.1:8000/accounts/login/?next=/revenue/individualvenue/4
+    success_url = '/accounts/login/?next=/revenue/' 
     def form_valid(self, form):
         form.save()  # type: ignore
         return super().form_valid(form)
@@ -127,8 +122,3 @@ class ReviewDeleteView(LoginRequiredMixin, View):
         # Delete the review
         review.delete()
         return redirect('individual_venue', pk=review.venue_id)
-
-# Landing page for developer convenience
-class DevView(View):
-    def get(self, request):
-        return render(request, 'dev.html')
