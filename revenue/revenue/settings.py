@@ -24,7 +24,7 @@ with open('../secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["18.237.14.147", "ec2-18-237-14-147.us-west-2.compute.amazonaws.com"]
 
@@ -129,6 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGOUT_REDIRECT_URL = 'home'
 
 # Static files handling
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES = [STATIC_ROOT]
+#import os
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATICFILES = [STATIC_ROOT]
